@@ -43,7 +43,7 @@ export function About() {
                             {/* Real Photo */}
                             <div className="absolute inset-0">
                                 <img
-                                    src="/jesus-bw.png?v=5"
+                                    src="/jesus-bw.webp"
                                     alt="Jesus Salinas - AI Web Developer in Vancouver"
                                     className="h-full w-full object-cover opacity-90 transition-opacity duration-500 group-hover:opacity-100 grayscale hover:grayscale-0"
                                 />
