@@ -1,0 +1,112 @@
+{
+    "Navbar": {
+        "about": "Sobre Mí",
+        "services": "Servicios",
+        "portfolio": "Portafolio",
+        "contact": "Contacto"
+    },
+    "Hero": {
+        "badge": "Disponible para nuevos proyectos",
+        "headline_prefix": "Creo aplicaciones web",
+        "headline_highlight": "inteligentes.",
+        "headline_suffix": "",
+        "subheadline": "Ayudo a emprendedores y empresas a lanzar software y sitios web de alto impacto.",
+        "cta_primary": "Ver Proyectos",
+        "cta_secondary": "Contactar"
+    },
+    "About": {
+        "title": "Sobre Mí | Jesus Salinas",
+        "headline_prefix": "Más que código,",
+        "headline_highlight": "soluciones.",
+        "description": "Desde Vancouver, aporto una sólida formación en Ciencias de la Computación y Sistemas de Información, combinando la disciplina de la ingeniería de software tradicional con el poder exponencial de la IA para entregar resultados robustos en semanas, no meses.",
+        "stats": {
+            "experience": "Experiencia",
+            "satisfaction": "Satisfacción",
+            "projects": "Proyectos"
+        }
+    },
+    "ValueProposition": {
+        "title": "¿Por qué Digital?",
+        "headline": "Potencia tu Negocio",
+        "description": "No es solo tener una web. Es crear un activo digital que trabaje para ti.",
+        "cards": {
+            "credibility": {
+                "title": "Credibilidad Inmediata",
+                "desc": "Tu primera impresión es digital. Convierte visitas en confianza con una presencia premium."
+            },
+            "automation": {
+                "title": "Automatización y Escala",
+                "desc": "Deja de usar Excel. Sistematiza tus operaciones y ahorra horas cada semana."
+            },
+            "global": {
+                "title": "Alcance Global",
+                "desc": "Tu negocio abierto 24/7, sin fronteras. Llega a clientes más allá de tu zona local."
+            }
+        }
+    },
+    "Services": {
+        "title": "Servicios",
+        "headline": "Productos Digitales de Alto Impacto",
+        "description": "Más que solo construir sitios web, creo activos digitales diseñados para hacer crecer tu negocio.",
+        "cards": {
+            "web_dev": {
+                "title": "Desarrollo Web Acelerado",
+                "desc": "Sitios modernos con Next.js y Tailwind. Rápidos, optimizados para SEO y hermosos."
+            },
+            "saas": {
+                "title": "SaaS y Web Apps",
+                "desc": "Aplicaciones complejas con autenticación, bases de datos (Supabase) y pagos."
+            },
+            "consulting": {
+                "title": "Consultoría Técnica",
+                "desc": "Asesoramiento estratégico sobre stack tecnológico, integración de IA y transformación digital."
+            }
+        }
+    },
+    "TechStack": {
+        "title": "Mi Stack Tecnológico",
+        "subtitle": "Potenciado por tecnologías modernas y robustas."
+    },
+    "Portfolio": {
+        "title": "Portafolio",
+        "headline": "Trabajos Seleccionados",
+        "description": "Una mezcla de aplicaciones web complejas y sitios de marketing de alto impacto.",
+        "private_access": "Acceso Privado",
+        "visit_site": "Visitar Sitio",
+        "projects": {
+            "below_zero_app": {
+                "title": "Below Zero App",
+                "description": "Plataforma SaaS integral para equipos científicos de refrigeración. Incluye programación en tiempo real, seguimiento de activos por código QR y facturación automatizada para operaciones optimizadas."
+            },
+            "below_zero_site": {
+                "title": "below-zero.ca",
+                "description": "Sitio corporativo para líder en instalación y reparación de equipos científicos de refrigeración. Enfocado en SEO, generación de leads y velocidad de carga extrema."
+            },
+            "cynthia": {
+                "title": "cynthiamedrano.ca",
+                "description": "Portafolio de servicios profesionales para consultora fiscal. Presenta un diseño limpio y multilingüe con sistema de reservas integrado para agilizar citas y consultas de clientes."
+            }
+        }
+    },
+    "Contact": {
+        "title": "Contacto",
+        "headline": "¿Listo para",
+        "headline_highlight": "Elevar tu Marca?",
+        "description": "Hablemos de tu proyecto. Respondo en menos de 24 horas.",
+        "say_hello": "Saludar",
+        "linkedin": "LinkedIn",
+        "footer": "Creado con Next.js, TypeScript y Tailwind.",
+        "form": {
+            "name": "Nombre",
+            "name_placeholder": "Juan Pérez",
+            "email": "Correo",
+            "email_placeholder": "juan@ejemplo.com",
+            "message": "Mensaje",
+            "message_placeholder": "Cuéntame sobre tu proyecto...",
+            "send": "Enviar Mensaje",
+            "sending": "Enviando...",
+            "success": "¡Mensaje enviado! Te responderé pronto.",
+            "error": "Algo salió mal. Por favor intenta de nuevo."
+        }
+    }
+}

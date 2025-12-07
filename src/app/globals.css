@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --color-void: #030712;
+  --color-ai-blue: #3B82F6;
+  --color-neural: #8B5CF6;
+  --color-code: #10B981;
+  --color-starlight: #F9FAFB;
+  --color-muted: #9CA3AF;
+}
+
+:root {
+  --background: var(--color-void);
+  --foreground: var(--color-starlight);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Hide Next.js Dev Indicator */
+[data-nextjs-toast] {
+  display: none !important;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}

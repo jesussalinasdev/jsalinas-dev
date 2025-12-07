@@ -1,0 +1,112 @@
+{
+    "Navbar": {
+        "about": "About",
+        "services": "Services",
+        "portfolio": "Portfolio",
+        "contact": "Contact"
+    },
+    "Hero": {
+        "badge": "Available for new projects",
+        "headline_prefix": "I build",
+        "headline_highlight": "intelligent",
+        "headline_suffix": "web applications.",
+        "subheadline": "Helping entrepreneurs and businesses launch high-impact software and websites.",
+        "cta_primary": "View Work",
+        "cta_secondary": "Contact Me"
+    },
+    "About": {
+        "title": "About Me | Jesus Salinas",
+        "headline_prefix": "More than code,",
+        "headline_highlight": "solutions.",
+        "description": "Based in Vancouver, I bring a solid background in Computing Science and Information Systems, combining traditional software engineering discipline with the exponential power of AI to deliver robust results in weeks, not months.",
+        "stats": {
+            "experience": "Experience",
+            "satisfaction": "Satisfaction",
+            "projects": "Projects"
+        }
+    },
+    "ValueProposition": {
+        "title": "Why Digital?",
+        "headline": "Power Your Business",
+        "description": "It's not just about having a website. It's about creating a digital asset that works for you.",
+        "cards": {
+            "credibility": {
+                "title": "Instant Credibility",
+                "desc": "Your first impression is digital. Convert visitors into trust with a premium presence."
+            },
+            "automation": {
+                "title": "Automation & Scale",
+                "desc": "Stop using spreadsheets. Systematize your operations and save hours every week."
+            },
+            "global": {
+                "title": "Global Reach",
+                "desc": "Your business open 24/7, without borders. Reach clients beyond your local area."
+            }
+        }
+    },
+    "Services": {
+        "title": "Services",
+        "headline": "High-Impact Digital Products",
+        "description": "More than just building websites, I create digital assets designed to grow your business.",
+        "cards": {
+            "web_dev": {
+                "title": "Accelerated Web Dev",
+                "desc": "Modern websites built with Next.js and Tailwind. Fast, SEO-optimized, and beautiful."
+            },
+            "saas": {
+                "title": "SaaS & Web Apps",
+                "desc": "Complex applications with authentication, databases (Supabase), and payments."
+            },
+            "consulting": {
+                "title": "Technical Consulting",
+                "desc": "Strategic advice on tech stack, AI integration, and digital transformation."
+            }
+        }
+    },
+    "TechStack": {
+        "title": "My Tech Stack",
+        "subtitle": "Powered by modern, robust technologies."
+    },
+    "Portfolio": {
+        "title": "Portfolio",
+        "headline": "Selected Work",
+        "description": "A mix of complex web applications and high-impact marketing sites.",
+        "private_access": "Private Access",
+        "visit_site": "Visit Site",
+        "projects": {
+            "below_zero_app": {
+                "title": "Below Zero App",
+                "description": "A comprehensive SaaS platform for scientific refrigeration teams. Features real-time scheduling, QR code asset tracking, and automated invoicing for streamlined operations."
+            },
+            "below_zero_site": {
+                "title": "below-zero.ca",
+                "description": "Corporate website for a leader in the installation and repair of scientific refrigeration equipment. Focused on SEO, lead generation, and high-performance loading speeds."
+            },
+            "cynthia": {
+                "title": "cynthiamedrano.ca",
+                "description": "Professional services portfolio for a tax consultant. Features a clean, multilingual design with an integrated booking system to streamline client appointments and service inquiries."
+            }
+        }
+    },
+    "Contact": {
+        "title": "Contact",
+        "headline": "Ready to",
+        "headline_highlight": "Elevate Your Brand?",
+        "description": "Let's discuss your project. I reply within 24 hours.",
+        "say_hello": "Say Hello",
+        "linkedin": "LinkedIn",
+        "footer": "Built with Next.js, TypeScript & Tailwind.",
+        "form": {
+            "name": "Name",
+            "name_placeholder": "John Doe",
+            "email": "Email",
+            "email_placeholder": "john@example.com",
+            "message": "Message",
+            "message_placeholder": "Tell me about your project...",
+            "send": "Send Message",
+            "sending": "Sending...",
+            "success": "Message sent! I'll get back to you soon.",
+            "error": "Something went wrong. Please try again."
+        }
+    }
+}
