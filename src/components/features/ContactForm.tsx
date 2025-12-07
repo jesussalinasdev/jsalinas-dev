@@ -11,15 +11,37 @@ export function ContactForm() {
         e.preventDefault();
         setStatus('sending');
 
-        // Simulate network request
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        const formData = new FormData(e.currentTarget);
 
-        // TODO: Implement actual email sending logic here
-        setStatus('success');
+        // Web3Forms Access Key
+        formData.append("access_key", "fa13fa1b-cf97-49cf-88b9-bfde80669e9f");
+
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                setStatus('success');
+                (e.target as HTMLFormElement).reset();
+            } else {
+                console.error("Web3Forms Error:", data);
+                setStatus('error');
+            }
+        } catch (error) {
+            console.error("Submission Error:", error);
+            setStatus('error');
+        }
     }
 
     return (
         <form onSubmit={handleSubmit} className="relative rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
+            {/* Honeypot Spam Protection (Hidden) */}
+            <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
+
             <div className="space-y-6">
                 {/* Name */}
                 <div>
@@ -81,10 +103,19 @@ export function ContactForm() {
                     >
                         {status === 'sending' ? t('sending') : status === 'success' ? t('success') : t('send')}
                     </button>
-                    {status === 'error' && (
-                        <p className="mt-2 text-sm text-red-400 text-center">{t('error')}</p>
-                    )}
                 </div>
+
+                {/* Status Messages */}
+                {status === 'success' && (
+                    <p className="mt-2 text-sm text-green-400 text-center animate-fade-in">
+                        {t('success')}
+                    </p>
+                )}
+                {status === 'error' && (
+                    <p className="mt-2 text-sm text-red-400 text-center animate-fade-in">
+                        {t('error')}
+                    </p>
+                )}
             </div>
         </form>
     );
