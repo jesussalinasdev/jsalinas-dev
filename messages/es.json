@@ -85,6 +85,10 @@
             "cynthia": {
                 "title": "cynthiamedrano.ca",
                 "description": "Portafolio de servicios profesionales para consultora fiscal. Presenta un diseño limpio y multilingüe con sistema de reservas integrado para agilizar citas y consultas de clientes."
+            },
+            "locky": {
+                "title": "Locky Password Manager",
+                "description": "Gestor de contraseñas seguro construido con Next.js y Supabase. Cuenta con bóvedas de credenciales, capacidades de equipo compartido y encriptación de grado militar."
             }
         }
     },
@@ -96,6 +100,7 @@
         "say_hello": "Saludar",
         "linkedin": "LinkedIn",
         "footer": "Creado con Next.js, TypeScript y Tailwind.",
+        "footer_privacy": "Política de Privacidad",
         "form": {
             "name": "Nombre",
             "name_placeholder": "Juan Pérez",
@@ -108,5 +113,18 @@
             "success": "¡Mensaje enviado! Te responderé pronto.",
             "error": "Algo salió mal. Por favor intenta de nuevo."
         }
+    },
+    "PrivacyPolicy": {
+        "title": "Política de Privacidad",
+        "last_updated": "Última Actualización: Diciembre 2025",
+        "intro": "En jsalinas.dev, respeto tu privacidad y estoy comprometido a proteger la información personal que compartes conmigo.",
+        "collection_title": "Recopilación de Información",
+        "collection_text": "Recopilo la información que proporcionas voluntariamente al usar el formulario de contacto, incluyendo tu nombre, dirección de correo electrónico y el contenido del mensaje.",
+        "usage_title": "Uso de la Información",
+        "usage_text": "La información recopilada se utiliza únicamente para responder a tus consultas y discutir proyectos potenciales. No vendo, intercambio ni transfiero tu información personal a terceros.",
+        "protection_title": "Protección de Datos",
+        "protection_text": "Implemento medidas de seguridad razonables para mantener la seguridad de tu información personal.",
+        "contact_title": "Contacto",
+        "contact_text": "Si tienes alguna pregunta sobre esta Política de Privacidad, por favor contáctame en hello@jsalinas.dev."
     }
 }

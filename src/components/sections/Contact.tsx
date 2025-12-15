@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { ContactForm } from "@/components/features/ContactForm";
+import { Link } from "@/i18n/navigation";
 
 export function Contact() {
     const t = useTranslations('Contact');
@@ -61,6 +62,11 @@ export function Contact() {
                 <footer className="mt-24 text-center text-sm text-muted/50 border-t border-white/5 pt-8">
                     <p>&copy; {new Date().getFullYear()} jsalinas.dev. All rights reserved.</p>
                     <p className="mt-2">{t('footer')}</p>
+                    <p className="mt-4">
+                        <Link href="/privacy-policy" className="hover:text-ai-blue transition-colors underline decoration-white/10 hover:decoration-ai-blue/50 underline-offset-4">
+                            {t('footer_privacy')}
+                        </Link>
+                    </p>
                 </footer>
             </div>
         </section>

@@ -10,6 +10,12 @@ export function Navbar() {
     const pathname = usePathname();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+    // Check if we are on the home page
+    const isHomePage = pathname === '/';
+
+    // Helper to get correct link for sections
+    const getSectionLink = (id: string) => isHomePage ? `#${id}` : `/#${id}`;
+
     return (
         <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-void/80 backdrop-blur-md">
             <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
@@ -20,13 +26,13 @@ export function Navbar() {
 
                 {/* Desktop Navigation */}
                 <div className="hidden items-center gap-8 md:flex">
-                    <Link href="#about" className="text-sm font-medium text-muted hover:text-ai-blue transition-colors">
+                    <Link href={getSectionLink('about')} className="text-sm font-medium text-muted hover:text-ai-blue transition-colors">
                         {t('about')}
                     </Link>
-                    <Link href="#services" className="text-sm font-medium text-muted hover:text-ai-blue transition-colors">
+                    <Link href={getSectionLink('services')} className="text-sm font-medium text-muted hover:text-ai-blue transition-colors">
                         {t('services')}
                     </Link>
-                    <Link href="#portfolio" className="text-sm font-medium text-muted hover:text-ai-blue transition-colors">
+                    <Link href={getSectionLink('portfolio')} className="text-sm font-medium text-muted hover:text-ai-blue transition-colors">
                         {t('portfolio')}
                     </Link>
                 </div>
@@ -51,7 +57,7 @@ export function Navbar() {
                         </Link>
                     </div>
                     <Link
-                        href="#contact"
+                        href={getSectionLink('contact')}
                         className="hidden rounded-full bg-ai-blue/10 px-4 py-2 text-sm font-medium text-ai-blue transition-all duration-300 hover:bg-ai-blue/20 hover:scale-105 md:block"
                     >
                         {t('contact')}
@@ -81,28 +87,28 @@ export function Navbar() {
                 <div className="absolute top-16 left-0 right-0 border-b border-white/5 bg-void/95 backdrop-blur-xl p-6 md:hidden shadow-2xl">
                     <div className="flex flex-col space-y-4">
                         <Link
-                            href="#about"
+                            href={getSectionLink('about')}
                             className="text-base font-medium text-muted hover:text-ai-blue transition-colors"
                             onClick={() => setIsMenuOpen(false)}
                         >
                             {t('about')}
                         </Link>
                         <Link
-                            href="#services"
+                            href={getSectionLink('services')}
                             className="text-base font-medium text-muted hover:text-ai-blue transition-colors"
                             onClick={() => setIsMenuOpen(false)}
                         >
                             {t('services')}
                         </Link>
                         <Link
-                            href="#portfolio"
+                            href={getSectionLink('portfolio')}
                             className="text-base font-medium text-muted hover:text-ai-blue transition-colors"
                             onClick={() => setIsMenuOpen(false)}
                         >
                             {t('portfolio')}
                         </Link>
                         <Link
-                            href="#contact"
+                            href={getSectionLink('contact')}
                             className="text-base font-medium text-ai-blue hover:text-ai-blue/80 transition-colors"
                             onClick={() => setIsMenuOpen(false)}
                         >

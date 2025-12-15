@@ -30,6 +30,14 @@ export function Portfolio() {
             link: "https://cynthiamedrano.ca",
             isPrivate: false,
         },
+        {
+            title: t('projects.locky.title'),
+            description: t('projects.locky.description'),
+            tags: ["Next.js", "TypeScript", "Tailwind", "Supabase", "Security"],
+            image: "/locky-dashboard.png",
+            link: "",
+            isPrivate: true,
+        },
     ];
 
     return (

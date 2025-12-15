@@ -85,6 +85,10 @@
             "cynthia": {
                 "title": "cynthiamedrano.ca",
                 "description": "Professional services portfolio for a tax consultant. Features a clean, multilingual design with an integrated booking system to streamline client appointments and service inquiries."
+            },
+            "locky": {
+                "title": "Locky Password Manager",
+                "description": "A secure password manager built with Next.js and Supabase. Features vaulted credentials, team sharing capabilities, and military-grade encryption for sensitive data."
             }
         }
     },
@@ -96,6 +100,7 @@
         "say_hello": "Say Hello",
         "linkedin": "LinkedIn",
         "footer": "Built with Next.js, TypeScript & Tailwind.",
+        "footer_privacy": "Privacy Policy",
         "form": {
             "name": "Name",
             "name_placeholder": "John Doe",
@@ -108,5 +113,18 @@
             "success": "Message sent! I'll get back to you soon.",
             "error": "Something went wrong. Please try again."
         }
+    },
+    "PrivacyPolicy": {
+        "title": "Privacy Policy",
+        "last_updated": "Last Updated: December 2025",
+        "intro": "At jsalinas.dev, I respect your privacy and am committed to protecting the personal information you share with me.",
+        "collection_title": "Information Collection",
+        "collection_text": "I collect information that you voluntarily provide when using the contact form, including your name, email address, and message content.",
+        "usage_title": "Use of Information",
+        "usage_text": "The information collected is used solely to respond to your inquiries and discuss potential projects. I do not sell, trade, or otherwise transfer your personal information to outside parties.",
+        "protection_title": "Data Protection",
+        "protection_text": "I implement reasonable security measures to maintain the safety of your personal information.",
+        "contact_title": "Contact Me",
+        "contact_text": "If you have any questions about this Privacy Policy, please contact me at hello@jsalinas.dev."
     }
 }
