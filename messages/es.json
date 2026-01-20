@@ -86,6 +86,10 @@
                 "title": "cynthiamedrano.ca",
                 "description": "Portafolio de servicios profesionales para consultora fiscal. Presenta un diseño limpio y multilingüe con sistema de reservas integrado para agilizar citas y consultas de clientes."
             },
+            "giuseppe_febres": {
+                "title": "Giuseppe Febres",
+                "description": "Portafolio profesional para un marketer digital especializado en campañas basadas en datos y narrativa de marca."
+            },
             "locky": {
                 "title": "Locky Password Manager",
                 "description": "Gestor de contraseñas seguro construido con Next.js y Supabase. Cuenta con bóvedas de credenciales, capacidades de equipo compartido y encriptación de grado militar."

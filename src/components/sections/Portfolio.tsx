@@ -31,6 +31,14 @@ export function Portfolio() {
             isPrivate: false,
         },
         {
+            title: t('projects.giuseppe_febres.title'),
+            description: t('projects.giuseppe_febres.description'),
+            tags: ["Digital Marketing", "Portfolio", "Strategy", "Analytics"],
+            image: "/giuseppe-febres-site.png",
+            link: "https://giuseppefebres.com/",
+            isPrivate: false,
+        },
+        {
             title: t('projects.locky.title'),
             description: t('projects.locky.description'),
             tags: ["Next.js", "TypeScript", "Tailwind", "Supabase", "Security"],

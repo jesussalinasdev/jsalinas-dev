@@ -86,6 +86,10 @@
                 "title": "cynthiamedrano.ca",
                 "description": "Professional services portfolio for a tax consultant. Features a clean, multilingual design with an integrated booking system to streamline client appointments and service inquiries."
             },
+            "giuseppe_febres": {
+                "title": "Giuseppe Febres",
+                "description": "Professional portfolio for a digital marketer specializing in data-driven campaigns and brand storytelling."
+            },
             "locky": {
                 "title": "Locky Password Manager",
                 "description": "A secure password manager built with Next.js and Supabase. Features vaulted credentials, team sharing capabilities, and military-grade encryption for sensitive data."
