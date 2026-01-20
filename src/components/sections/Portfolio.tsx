@@ -33,7 +33,7 @@ export function Portfolio() {
         {
             title: t('projects.giuseppe_febres.title'),
             description: t('projects.giuseppe_febres.description'),
-            tags: ["Digital Marketing", "Portfolio", "Strategy", "Analytics"],
+            tags: ["Portfolio", "Next.js", "Analytics"],
             image: "/giuseppe-febres-site.png",
             link: "https://giuseppefebres.com/",
             isPrivate: false,
