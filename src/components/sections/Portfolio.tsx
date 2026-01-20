@@ -63,7 +63,7 @@ export function Portfolio() {
 
                 <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
                     {projects.map((project) => (
-                        <article key={project.title} className="flex flex-col items-start justify-between group">
+                        <article key={project.title} className="flex flex-col items-start group">
                             <div className="relative w-full aspect-[16/9] overflow-hidden rounded-2xl bg-gray-900 border border-white/10">
                                 <img
                                     src={project.image}
