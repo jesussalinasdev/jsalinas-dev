@@ -93,6 +93,10 @@
             "locky": {
                 "title": "Locky Password Manager",
                 "description": "A secure password manager built with Next.js and Supabase. Features vaulted credentials, team sharing capabilities, and military-grade encryption for sensitive data."
+            },
+            "cynthia_tracker": {
+                "title": "Tax Return Tracker",
+                "description": "A dedicated tracking system for tax return processes. Clients check status in real-time, improving transparency and reducing support inquiries."
             }
         }
     },

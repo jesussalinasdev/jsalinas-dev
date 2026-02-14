@@ -46,6 +46,14 @@ export function Portfolio() {
             link: "",
             isPrivate: true,
         },
+        {
+            title: t('projects.cynthia_tracker.title'),
+            description: t('projects.cynthia_tracker.description'),
+            tags: ["React", "Vercel", "Supabase", "Tailwind"],
+            image: "/cynthia-tracker.webp",
+            link: "https://track.cynthiamedrano.ca/",
+            isPrivate: false,
+        },
     ];
 
     return (

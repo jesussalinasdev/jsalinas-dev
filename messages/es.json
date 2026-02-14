@@ -93,6 +93,10 @@
             "locky": {
                 "title": "Locky Password Manager",
                 "description": "Gestor de contraseñas seguro construido con Next.js y Supabase. Cuenta con bóvedas de credenciales, capacidades de equipo compartido y encriptación de grado militar."
+            },
+            "cynthia_tracker": {
+                "title": "Rastreador de Declaraciones",
+                "description": "Sistema dedicado para rastrear el estado de declaraciones de impuestos. Los clientes consultan su estado en tiempo real, mejorando la transparencia."
             }
         }
     },
