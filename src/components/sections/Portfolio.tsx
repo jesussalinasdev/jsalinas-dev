@@ -54,6 +54,14 @@ export function Portfolio() {
             link: "https://track.cynthiamedrano.ca/",
             isPrivate: false,
         },
+        {
+            title: t('projects.cynthia_clients.title'),
+            description: t('projects.cynthia_clients.description'),
+            tags: ["Next.js", "Supabase", "Tailwind", "CRM"],
+            image: "/clients-cynthia.webp",
+            link: "",
+            isPrivate: true,
+        },
     ];
 
     return (

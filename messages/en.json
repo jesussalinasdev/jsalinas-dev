@@ -97,6 +97,10 @@
             "cynthia_tracker": {
                 "title": "Tax Return Tracker",
                 "description": "A dedicated tracking system for tax return processes. Clients check status in real-time, improving transparency and reducing support inquiries."
+            },
+            "cynthia_clients": {
+                "title": "Cynthia Clients & Process",
+                "description": "Internal CRM for managing client portfolios and tax return workflows. Features automated status updates, document centralization, and secure client communication."
             }
         }
     },

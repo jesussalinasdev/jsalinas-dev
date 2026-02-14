@@ -97,6 +97,10 @@
             "cynthia_tracker": {
                 "title": "Rastreador de Declaraciones",
                 "description": "Sistema dedicado para rastrear el estado de declaraciones de impuestos. Los clientes consultan su estado en tiempo real, mejorando la transparencia."
+            },
+            "cynthia_clients": {
+                "title": "Gestión de Clientes y Procesos",
+                "description": "CRM interno para administrar carteras de clientes y flujos de trabajo fiscales. Incluye actualizaciones automáticas, centralización de documentos y comunicación segura."
             }
         }
     },
