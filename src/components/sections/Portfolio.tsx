@@ -41,7 +41,7 @@ export function Portfolio() {
         {
             title: t('projects.locky.title'),
             description: t('projects.locky.description'),
-            tags: ["Next.js", "TypeScript", "Tailwind", "Supabase", "Security"],
+            tags: ["Next.js", "TypeScript", "Supabase", "Security"],
             image: "/locky-dashboard.png",
             link: "",
             isPrivate: true,
