@@ -14,6 +14,7 @@ export function NeuralBackground() {
 
         let width = window.innerWidth;
         let height = window.innerHeight;
+        let animationFrameId: number;
         let particles: Particle[] = [];
 
         // Configuration
@@ -30,7 +31,11 @@ export function NeuralBackground() {
             height = window.innerHeight;
             canvas.width = width;
             canvas.height = height;
-            initParticles();
+            
+            // Only initialize particles if on desktop to save memory
+            if (width >= 768) {
+                initParticles();
+            }
         };
 
         // Mouse move handler
@@ -82,6 +87,16 @@ export function NeuralBackground() {
 
         const animate = () => {
             if (!ctx) return;
+            
+            // SECURITY/PERFORMANCE CHECK: Abort heavy math on Mobile (less than 768px)
+            if (window.innerWidth < 768) {
+                // We don't draw anything on canvas for mobile, saving 100% of CPU time
+                ctx.clearRect(0, 0, width, height);
+                // Keep the loop alive just in case they rotate their iPad/Phone to landscape
+                animationFrameId = requestAnimationFrame(animate); 
+                return;
+            }
+
             ctx.clearRect(0, 0, width, height);
 
             particles.forEach((particle) => {
@@ -119,7 +134,7 @@ export function NeuralBackground() {
                 });
             });
 
-            requestAnimationFrame(animate);
+            animationFrameId = requestAnimationFrame(animate);
         };
 
         // Initialize
@@ -131,13 +146,29 @@ export function NeuralBackground() {
         return () => {
             window.removeEventListener("resize", handleResize);
             window.removeEventListener("mousemove", handleMouseMove);
+            cancelAnimationFrame(animationFrameId);
         };
     }, []);
 
     return (
-        <canvas
-            ref={canvasRef}
-            className="pointer-events-none fixed inset-0 z-0"
-        />
+        <>
+            {/* CSS-only Animated Fallback for Mobile (Zero JS CPU Cost) */}
+            <div className="pointer-events-none fixed inset-0 z-0 flex items-center justify-center overflow-hidden md:hidden">
+                <div 
+                    className="absolute h-[60vh] w-[60vw] rounded-full bg-ai-blue/10 blur-[100px] animate-pulse" 
+                    style={{ animationDuration: '4s' }} 
+                />
+                <div 
+                    className="absolute h-[50vh] w-[70vw] translate-y-20 rounded-full bg-neural/10 blur-[120px] animate-pulse" 
+                    style={{ animationDuration: '6s', animationDelay: '1s' }} 
+                />
+            </div>
+
+            {/* Heavy JS Canvas for Desktop */}
+            <canvas
+                ref={canvasRef}
+                className="pointer-events-none fixed inset-0 z-0 hidden md:block"
+            />
+        </>
     );
 }
