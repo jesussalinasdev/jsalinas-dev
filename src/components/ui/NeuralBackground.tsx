@@ -82,8 +82,8 @@ export function NeuralBackground() {
 
         const initParticles = () => {
             particles = [];
-            // On mobile, use slightly fewer particles for the static painting to keep it clean
-            const count = window.innerWidth < 768 ? 30 : particleCount;
+            // On mobile, use significantly fewer particles (12) for the static painting to prevent CPU choking
+            const count = window.innerWidth < 768 ? 12 : particleCount;
             for (let i = 0; i < count; i++) {
                 particles.push(new Particle());
             }
