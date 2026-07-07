@@ -4,8 +4,6 @@ import type { NextConfig } from "next";
 const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
-  output: 'export',
-  trailingSlash: true,
   /* config options here */
 };
 
