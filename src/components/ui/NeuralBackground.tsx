@@ -32,9 +32,11 @@ export function NeuralBackground() {
             canvas.width = width;
             canvas.height = height;
             
-            // Only initialize particles if on desktop to save memory
-            if (width >= 768) {
-                initParticles();
+            initParticles();
+            
+            // If on mobile, manually trigger one draw to create a static painting
+            if (width < 768) {
+                drawStaticPainting();
             }
         };
 
@@ -73,27 +75,50 @@ export function NeuralBackground() {
                 if (!ctx) return;
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = "rgba(59, 130, 246, 0.2)"; // AI Blue with low opacity
+                ctx.fillStyle = "rgba(59, 130, 246, 0.4)"; // AI Blue
                 ctx.fill();
             }
         }
 
         const initParticles = () => {
             particles = [];
-            for (let i = 0; i < particleCount; i++) {
+            // On mobile, use slightly fewer particles for the static painting to keep it clean
+            const count = window.innerWidth < 768 ? 30 : particleCount;
+            for (let i = 0; i < count; i++) {
                 particles.push(new Particle());
             }
+        };
+
+        // Draws the frame exactly once (used for Mobile)
+        const drawStaticPainting = () => {
+            if (!ctx) return;
+            ctx.clearRect(0, 0, width, height);
+
+            particles.forEach((particle) => {
+                particle.draw(); // No update() called, it's frozen
+
+                particles.forEach((otherParticle) => {
+                    const dx = particle.x - otherParticle.x;
+                    const dy = particle.y - otherParticle.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < connectionDistance) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(139, 92, 246, ${0.2 - dist / connectionDistance * 0.2})`; // Neural Purple
+                        ctx.lineWidth = 0.5;
+                        ctx.moveTo(particle.x, particle.y);
+                        ctx.lineTo(otherParticle.x, otherParticle.y);
+                        ctx.stroke();
+                    }
+                });
+            });
         };
 
         const animate = () => {
             if (!ctx) return;
             
-            // SECURITY/PERFORMANCE CHECK: Abort heavy math on Mobile (less than 768px)
+            // Abort animation loop entirely on Mobile (Static painting is drawn on resize/load)
             if (window.innerWidth < 768) {
-                // We don't draw anything on canvas for mobile, saving 100% of CPU time
-                ctx.clearRect(0, 0, width, height);
-                // Keep the loop alive just in case they rotate their iPad/Phone to landscape
-                animationFrameId = requestAnimationFrame(animate); 
                 return;
             }
 
@@ -141,34 +166,23 @@ export function NeuralBackground() {
         handleResize();
         window.addEventListener("resize", handleResize);
         window.addEventListener("mousemove", handleMouseMove);
-        animate();
+        
+        // Start animation loop (it will self-cancel if on mobile)
+        if (window.innerWidth >= 768) {
+            animate();
+        }
 
         return () => {
             window.removeEventListener("resize", handleResize);
             window.removeEventListener("mousemove", handleMouseMove);
-            cancelAnimationFrame(animationFrameId);
+            if (animationFrameId) cancelAnimationFrame(animationFrameId);
         };
     }, []);
 
     return (
-        <>
-            {/* CSS-only Animated Fallback for Mobile (Zero JS CPU Cost) */}
-            <div className="pointer-events-none fixed inset-0 z-0 flex items-center justify-center overflow-hidden md:hidden">
-                <div 
-                    className="absolute h-[60vh] w-[60vw] rounded-full bg-ai-blue/10 blur-[100px] animate-pulse" 
-                    style={{ animationDuration: '4s' }} 
-                />
-                <div 
-                    className="absolute h-[50vh] w-[70vw] translate-y-20 rounded-full bg-neural/10 blur-[120px] animate-pulse" 
-                    style={{ animationDuration: '6s', animationDelay: '1s' }} 
-                />
-            </div>
-
-            {/* Heavy JS Canvas for Desktop */}
-            <canvas
-                ref={canvasRef}
-                className="pointer-events-none fixed inset-0 z-0 hidden md:block"
-            />
-        </>
+        <canvas
+            ref={canvasRef}
+            className="pointer-events-none fixed inset-0 z-0"
+        />
     );
 }
