@@ -34,6 +34,11 @@ export default async function PrivacyPolicy({ params }: { params: Promise<{ loca
                     </section>
 
                     <section>
+                        <h2 className="text-xl font-semibold text-white mb-4">{t('analytics_title')}</h2>
+                        <p>{t('analytics_text')}</p>
+                    </section>
+
+                    <section>
                         <h2 className="text-xl font-semibold text-white mb-4">{t('protection_title')}</h2>
                         <p>{t('protection_text')}</p>
                     </section>
