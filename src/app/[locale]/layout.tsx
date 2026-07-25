@@ -47,6 +47,9 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className="scroll-smooth">
+      <head>
+        <meta name="impact-site-verification" content="a04a30ef-37e0-4a75-882b-855c1e826fcd" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-void`}
       >
