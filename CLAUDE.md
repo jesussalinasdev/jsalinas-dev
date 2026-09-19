@@ -27,13 +27,18 @@ Sitio personal y portfolio de Jesús Salinas. Web estática bilingüe, inglés y
 - `messages/en.json` y `messages/es.json` todo el texto visible
 - `public/` imágenes y estáticos, lo único que se publica tal cual
 
-## Reglas
+## Trabajo pendiente
+
+Lo que hay que implementar está solo en:
+
+`H:\My Drive\Ryot_HQ\2_JSALINAS.DEV\jsalinas.dev\pendientes-implementacion.md`
+
+Se siguen las reglas del embudo del CLAUDE.md global.
+
+## Reglas de este repo
 
 - Todo texto visible va en `messages/`. Nunca texto hardcodeado en componentes. Cada clave nueva se añade en en.json y es.json a la vez.
-- El sitio es 100 % estático: nada que requiera servidor en runtime, ni API routes, ni middleware, ni server actions, ni `next/image` optimizado.
-- Antes de dar un cambio por terminado, corre `npm run build` y confirma que compila sin errores.
+- El sitio es 100 % estático: nada que requiera servidor en runtime, ni API routes, ni middleware, ni server actions, ni `next/image` optimizado. `output: "export"` no se quita.
+- Antes de dar un cambio por terminado, `npm run build` sin errores.
 - Imágenes nuevas en `public/` en formato WebP.
-- Cambios pequeños y enfocados. Propón un plan antes de tocar varios archivos.
-- Solo código en este repo. Documentación, briefs y assets de trabajo viven fuera del repo.
-- Nunca escribas credenciales, claves ni datos privados en el repo. Este archivo puede ser público.
-- No hagas commit ni push salvo que se pida.
+- Este repo puede ser público: nada privado en archivos versionados.
