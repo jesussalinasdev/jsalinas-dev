@@ -220,6 +220,16 @@ const t = useTranslations(locale);
                 form.reset();
                 label.textContent = form.dataset.sent ?? '';
                 ok.hidden = false;
+                // Stays "sent" (no accidental double send) until they start a new message.
+                form.addEventListener(
+                    'input',
+                    () => {
+                        button.disabled = false;
+                        label.textContent = form.dataset.send ?? '';
+                        ok.hidden = true;
+                    },
+                    { once: true },
+                );
             } catch {
                 button.disabled = false;
                 label.textContent = form.dataset.send ?? '';

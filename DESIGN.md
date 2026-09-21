@@ -14,7 +14,8 @@ colors:
   accent: "oklch(71% 0.15 252)"
   accent-hot: "oklch(77% 0.125 248)"
   on-accent: "oklch(17% 0.045 258)"
-  on-accent-2: "oklch(27% 0.07 258)"
+  accent-deep: "oklch(42% 0.155 259)"
+  on-deep-2: "oklch(87% 0.035 252)"
   signal: "oklch(88% 0.165 96)"
   field: "oklch(60% 0.15 256)"
   error: "oklch(70% 0.19 25)"
@@ -178,8 +179,9 @@ A night palette from the job site: cool blue-black inks, warm-white text, one co
 ### Primary
 - **Cobalt** (`accent`): the only accent the interface speaks in. Primary buttons, the highlighted half of every split headline, the wordmark's ".dev", links, the bubble's "new message" status, FAQ icons and hover, the nav underline and language marker, Why path nodes, focus rings, selection, caret and `accent-color`. As a ground it owns the entire Offer section.
 - **Cobalt Hot** (`accent-hot`): hover state of the primary button; the text color of inline code chips on the Offer field.
-- **Cobalt Ink** (`on-accent`): dark blue ink on cobalt. Text on primary buttons and the nav CTA hover, all Offer text and its rules, the selection text color.
-- **Cobalt Ink Soft** (`on-accent-2`): secondary copy on the Offer field (plan descriptions, the "not included" line).
+- **Cobalt Ink** (`on-accent`): dark blue ink on cobalt. Text on primary buttons and the nav CTA hover.
+- **Deep Cobalt** (`accent-deep`, oklch(42% 0.155 259), #08479F): the Offer ground, with Warm White ink at 7.7:1 (AAA).
+- **Deep Cobalt Soft** (`on-deep-2`, oklch(87% 0.035 252)): secondary copy on the Offer field (plan descriptions, the "not included" line), 5.9:1.
 
 ### Secondary
 - **Hi-Vis Signal** (`signal`): the signal and nothing else. The shader ripples, the inner rings behind the portrait and in empty demo slots, and the hero status dot with its ping. Never text, never a button, never a ground.
@@ -200,7 +202,7 @@ A night palette from the job site: cool blue-black inks, warm-white text, one co
 ### Named Rules
 **The One Accent Rule.** Cobalt is the only color the interface speaks in. It either marks the single thing to read or act on, or it owns a whole region. It is never spread thin as a decorative tint across cards.
 
-**The Drenched Field Rule.** When a section goes cobalt it goes all the way: cobalt ground, Cobalt Ink text, rules drawn in ink (3px under the headline, 1.5px between items), inline code inverted to ink chips with Cobalt Hot text, selection and focus outline switched to ink. No cards, no dark panels floating on the blue.
+**The Drenched Field Rule.** When a section goes blue it goes all the way: the Offer is a Deep Cobalt ground with Warm White text, a 3px Warm White rule under the headline and 45%-white 1.5px rules between items, and inline code as dark chips with Cobalt Hot text. Light cobalt stays the accent for buttons and highlights; the full-width field is always the deep one, so a large block never glares on a dark page.
 
 **The Signal Is Only Signal Rule.** Hi-vis yellow marks arrival: ripples, rings, the status dot. It is never text, never a button, never a ground, and never a second accent for emphasis.
 
@@ -267,7 +269,7 @@ One pill family, 3.25rem tall, Control type, with an optional trailing 1.15em st
 - **Primary:** Cobalt fill and border, Cobalt Ink text, padding 0 1.6rem. One primary per view region ("Escríbeme", form submit, 404 home link).
 - **Hover / Focus:** fill and border move to Cobalt Hot; the trailing arrow slides 3px right on the ease-out; active scales to 0.98. Focus is the global 2px cobalt outline at 3px offset.
 - **Ghost:** transparent with a Strong Hairline stroke and Warm White text; hover turns the stroke Warm White and adds a 6% white fill. Over the field (the mail button) it takes a Night Ink fill so the waves never run through the label.
-- **Disabled:** 0.6 opacity, not-allowed cursor; the label reports sending state.
+- **Disabled:** 0.6 opacity, not-allowed cursor; the label reports sending state. After a successful send the form submit stays disabled as "Enviado" with the success note, and returns to "Enviar mensaje" as soon as the visitor types again.
 - **Mobile:** at 480px hero buttons go full width; the form submit goes full width at 900px.
 
 ### Inputs / Fields
@@ -299,7 +301,7 @@ The stack lives inside a phone: a 23rem device with a 2.6rem Well Ink bezel, Str
 The brief-pinned Annex A availability line ("Disponible para nuevos proyectos" / "Available for new projects") sits under the hero actions as a plain Label-type line in Mist with a 0.55rem signal-yellow dot whose ring pings three times (2.4s each) and then stops. It is never a pill or eyebrow above the headline.
 
 ### Offer Field
-The drenched section: plans in two columns under a 3px ink rule, each with a large Title name, a tabular price line and Cobalt Ink Soft description; extras in a second two-column row under a 1.5px rule; the exclusions line last under its own rule. The demo links line appears only once all three demos have a URL. Stacks to one column at 760px with 1.5px rules between items.
+The drenched section: plans in two columns under a 3px ink rule, each with a large Title name, a tabular price line and Deep Cobalt Soft description; extras in a second two-column row under a 1.5px rule; the exclusions line last under its own rule. The demo links line appears only once all three demos have a URL. Stacks to one column at 760px with 1.5px rules between items.
 
 ### Why Path
 Three stations on one 1.5px Strong Hairline: each node is a 1.4rem ring with a cobalt stroke and a cobalt core, followed by a Title h3 and Mist copy capped at 34ch. Vertical with left-hung nodes on phones.

@@ -185,21 +185,6 @@
           "oklch(93% 0.04 250)"
         ]
       },
-      "on-accent-2": {
-        "role": "primary",
-        "displayName": "Cobalt Ink Soft",
-        "canonical": "oklch(27% 0.07 258)",
-        "tonalRamp": [
-          "oklch(17% 0.045 258)",
-          "oklch(27% 0.07 258)",
-          "oklch(40% 0.11 256)",
-          "oklch(52% 0.14 254)",
-          "oklch(60% 0.15 256)",
-          "oklch(71% 0.15 252)",
-          "oklch(77% 0.125 248)",
-          "oklch(93% 0.04 250)"
-        ]
-      },
       "signal": {
         "role": "secondary",
         "displayName": "Hi-Vis Signal",
@@ -245,6 +230,36 @@
           "oklch(70% 0.19 25)",
           "oklch(82% 0.1 25)",
           "oklch(90% 0.06 25)"
+        ]
+      },
+      "accent-deep": {
+        "role": "primary",
+        "displayName": "Deep Cobalt",
+        "canonical": "oklch(42% 0.155 259)",
+        "tonalRamp": [
+          "oklch(17% 0.045 258)",
+          "oklch(27% 0.07 258)",
+          "oklch(40% 0.11 256)",
+          "oklch(52% 0.14 254)",
+          "oklch(60% 0.15 256)",
+          "oklch(71% 0.15 252)",
+          "oklch(77% 0.125 248)",
+          "oklch(93% 0.04 250)"
+        ]
+      },
+      "on-deep-2": {
+        "role": "primary",
+        "displayName": "Deep Cobalt Soft",
+        "canonical": "oklch(87% 0.035 252)",
+        "tonalRamp": [
+          "oklch(17% 0.045 258)",
+          "oklch(27% 0.07 258)",
+          "oklch(40% 0.11 256)",
+          "oklch(52% 0.14 254)",
+          "oklch(60% 0.15 256)",
+          "oklch(71% 0.15 252)",
+          "oklch(77% 0.125 248)",
+          "oklch(93% 0.04 250)"
         ]
       }
     },
@@ -448,7 +463,7 @@
       "refersTo": "offer-field",
       "description": "Plan on the cobalt ground: ink rule, large name, tabular price, soft-ink description. No card chrome.",
       "html": "<section class=\"ds-offer\"><article class=\"ds-plan\"><h3>Un idioma</h3><p class=\"ds-plan-price\">550 CAD en Canadá, 499 USD en Estados Unidos.</p><p class=\"ds-plan-desc\">Una sola página con lo que un cliente necesita para decidir. El dominio queda a tu nombre: <code>tu@tudominio.com</code></p></article></section>",
-      "css": ".ds-offer { padding: 2.5rem 1.5rem; background: var(--accent, oklch(71% 0.15 252)); color: var(--on-accent, oklch(17% 0.045 258)); font-family: 'Archivo Variable', 'Archivo', system-ui, sans-serif; } .ds-plan { padding-top: 2rem; border-top: 3px solid var(--on-accent, oklch(17% 0.045 258)); } .ds-plan h3 { margin: 0; font-size: clamp(2rem, 1.5rem + 1.8vw, 3.1rem); font-weight: 820; font-stretch: 118%; line-height: 1; letter-spacing: -0.022em; } .ds-plan-price { margin: 1rem 0 0; font-size: clamp(1.2rem, 1.05rem + 0.6vw, 1.55rem); font-weight: 720; font-stretch: 110%; line-height: 1.3; font-variant-numeric: tabular-nums; } .ds-plan-desc { max-width: 60ch; margin: 1.5rem 0 0; color: var(--on-accent-2, oklch(27% 0.07 258)); line-height: 1.6; } .ds-plan code { font-family: inherit; font-weight: 650; font-stretch: 112%; background: var(--on-accent, oklch(17% 0.045 258)); color: var(--accent-hot, oklch(77% 0.125 248)); padding: 0.05em 0.35em; border-radius: 0.35em; } .ds-offer a:focus-visible { outline: 2px solid var(--on-accent, oklch(17% 0.045 258)); outline-offset: 3px; }"
+      "css": ".ds-offer { padding: 2.5rem 1.5rem; background: var(--accent-deep, oklch(42% 0.155 259)); color: var(--text, oklch(96% 0.012 85)); font-family: 'Archivo Variable', 'Archivo', system-ui, sans-serif; } .ds-plan { padding-top: 2rem; border-top: 3px solid var(--text, oklch(96% 0.012 85)); } .ds-plan h3 { margin: 0; font-size: clamp(2rem, 1.5rem + 1.8vw, 3.1rem); font-weight: 820; font-stretch: 118%; line-height: 1; letter-spacing: -0.022em; } .ds-plan-price { margin: 1rem 0 0; font-size: clamp(1.2rem, 1.05rem + 0.6vw, 1.55rem); font-weight: 720; font-stretch: 110%; line-height: 1.3; font-variant-numeric: tabular-nums; } .ds-plan-desc { max-width: 60ch; margin: 1.5rem 0 0; color: var(--on-deep-2, oklch(87% 0.035 252)); line-height: 1.6; } .ds-plan code { font-family: inherit; font-weight: 650; font-stretch: 112%; background: var(--on-accent, oklch(17% 0.045 258)); color: var(--accent-hot, oklch(77% 0.125 248)); padding: 0.05em 0.35em; border-radius: 0.35em; } .ds-offer a:focus-visible { outline: 2px solid var(--on-accent, oklch(17% 0.045 258)); outline-offset: 3px; }"
     },
     {
       "name": "Why Path Step",
