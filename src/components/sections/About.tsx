@@ -17,24 +17,11 @@ export function About() {
                             {t('headline_prefix')} <span className="text-neural">{t('headline_highlight')}</span>
                         </p>
                         <p className="mt-6 text-lg leading-8 text-muted">
-                            {t('description')}
+                            {t('p1')}
                         </p>
-
-                        {/* Stats Grid */}
-                        <dl className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-3">
-                            <div className="flex flex-col border-l border-white/10 pl-4">
-                                <dt className="text-sm leading-6 text-muted">{t('stats.experience')}</dt>
-                                <dd className="order-first text-2xl font-semibold tracking-tight text-starlight">3+ Years</dd>
-                            </div>
-                            <div className="flex flex-col border-l border-white/10 pl-4">
-                                <dt className="text-sm leading-6 text-muted">{t('stats.satisfaction')}</dt>
-                                <dd className="order-first text-2xl font-semibold tracking-tight text-starlight">100%</dd>
-                            </div>
-                            <div className="flex flex-col border-l border-white/10 pl-4">
-                                <dt className="text-sm leading-6 text-muted">{t('stats.projects')}</dt>
-                                <dd className="order-first text-2xl font-semibold tracking-tight text-starlight">15+</dd>
-                            </div>
-                        </dl>
+                        <p className="mt-6 text-lg leading-8 text-muted">
+                            {t('p2')}
+                        </p>
                     </div>
 
                     {/* Right Column: Photo */}

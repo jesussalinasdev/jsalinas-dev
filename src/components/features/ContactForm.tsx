@@ -88,7 +88,6 @@ export function ContactForm() {
                             id="message"
                             rows={4}
                             required
-                            placeholder={t('message_placeholder')}
                             className="block w-full rounded-md border-0 bg-white/5 py-2.5 pl-4 text-starlight shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-ai-blue sm:text-sm sm:leading-6 placeholder:text-muted/50 resize-none transition-colors duration-300 hover:bg-white/10"
                         />
                     </div>
@@ -101,7 +100,7 @@ export function ContactForm() {
                         disabled={status === 'sending' || status === 'success'}
                         className="flex w-full sm:w-auto justify-center rounded-full bg-ai-blue px-8 py-3 text-sm font-semibold leading-6 text-white shadow-lg shadow-ai-blue/25 hover:bg-ai-blue/80 hover:scale-[1.02] hover:shadow-ai-blue/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ai-blue disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
                     >
-                        {status === 'sending' ? t('sending') : status === 'success' ? t('success') : t('send')}
+                        {status === 'sending' ? t('sending') : status === 'success' ? t('sent') : t('send')}
                     </button>
                 </div>
 

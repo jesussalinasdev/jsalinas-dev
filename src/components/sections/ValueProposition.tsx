@@ -22,20 +22,20 @@ export const ValueProposition = () => {
                 </div>
 
                 <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-                    {/* Card 1: Credibility */}
+                    {/* Card 1: Search */}
                     <div className="group flex flex-col items-start rounded-2xl border border-white/10 bg-white/5 px-8 py-10 backdrop-blur-sm transition-all hover:bg-white/10 hover:border-ai-blue/50 hover:scale-105 hover:shadow-[0_0_30px_rgba(59,130,246,0.1)]">
                         <div className="mb-6 rounded-lg bg-ai-blue/10 p-3 ring-1 ring-white/10 text-ai-blue group-hover:scale-110 transition-transform duration-300">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
                             </svg>
                         </div>
-                        <h4 className="text-xl font-semibold leading-7 text-starlight mb-3">{t('cards.credibility.title')}</h4>
+                        <h4 className="text-xl font-semibold leading-7 text-starlight mb-3">{t('cards.search.title')}</h4>
                         <p className="flex-auto text-base leading-7 text-muted">
-                            {t('cards.credibility.desc')}
+                            {t('cards.search.desc')}
                         </p>
                     </div>
 
-                    {/* Card 2: Automation */}
+                    {/* Card 2: WhatsApp */}
                     <div className="group flex flex-col items-start rounded-2xl border border-white/10 bg-white/5 px-8 py-10 backdrop-blur-sm transition-all hover:bg-white/10 hover:border-neural/50 hover:scale-105 hover:shadow-[0_0_30px_rgba(139,92,246,0.1)]">
                         <div className="mb-6 rounded-lg bg-neural/10 p-3 ring-1 ring-white/10 text-neural group-hover:scale-110 transition-transform duration-300">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -44,13 +44,13 @@ export const ValueProposition = () => {
                                 <path d="m8 12 4 4 4-4" />
                             </svg>
                         </div>
-                        <h4 className="text-xl font-semibold leading-7 text-starlight mb-3">{t('cards.automation.title')}</h4>
+                        <h4 className="text-xl font-semibold leading-7 text-starlight mb-3">{t('cards.whatsapp.title')}</h4>
                         <p className="flex-auto text-base leading-7 text-muted">
-                            {t('cards.automation.desc')}
+                            {t('cards.whatsapp.desc')}
                         </p>
                     </div>
 
-                    {/* Card 3: Global Reach */}
+                    {/* Card 3: Ownership */}
                     <div className="group flex flex-col items-start rounded-2xl border border-white/10 bg-white/5 px-8 py-10 backdrop-blur-sm transition-all hover:bg-white/10 hover:border-code/50 hover:scale-105 hover:shadow-[0_0_30px_rgba(16,185,129,0.1)]">
                         <div className="mb-6 rounded-lg bg-code/10 p-3 ring-1 ring-white/10 text-code group-hover:scale-110 transition-transform duration-300">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -59,9 +59,9 @@ export const ValueProposition = () => {
                                 <path d="M2 12h20" />
                             </svg>
                         </div>
-                        <h4 className="text-xl font-semibold leading-7 text-starlight mb-3">{t('cards.global.title')}</h4>
+                        <h4 className="text-xl font-semibold leading-7 text-starlight mb-3">{t('cards.ownership.title')}</h4>
                         <p className="flex-auto text-base leading-7 text-muted">
-                            {t('cards.global.desc')}
+                            {t('cards.ownership.desc')}
                         </p>
                     </div>
                 </div>

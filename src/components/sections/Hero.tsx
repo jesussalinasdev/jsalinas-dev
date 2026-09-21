@@ -26,7 +26,7 @@ export function Hero() {
                 <h1 className="mb-6 text-5xl font-bold tracking-tight text-starlight md:text-7xl">
                     {t('headline_prefix')} <br />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-ai-blue to-neural">
-                        {t('headline_highlight')} {t('headline_suffix')}
+                        {t('headline_highlight')}
                     </span>
                 </h1>
 
@@ -38,13 +38,13 @@ export function Hero() {
                 {/* CTA Buttons */}
                 <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
                     <Link
-                        href="#portfolio"
+                        href="#contact"
                         className="rounded-full bg-ai-blue px-8 py-3 text-base font-semibold text-white shadow-lg shadow-ai-blue/25 transition-all duration-300 hover:bg-ai-blue/80 hover:scale-105 hover:shadow-ai-blue/40"
                     >
                         {t('cta_primary')}
                     </Link>
                     <Link
-                        href="#contact"
+                        href="#offer"
                         className="rounded-full border border-white/10 bg-white/5 px-8 py-3 text-base font-medium text-starlight backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:border-white/20 hover:scale-105 hover:shadow-lg hover:shadow-white/5"
                     >
                         {t('cta_secondary')}

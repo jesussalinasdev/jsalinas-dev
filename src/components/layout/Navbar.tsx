@@ -29,8 +29,8 @@ export function Navbar() {
                     <Link href={getSectionLink('about')} className="text-sm font-medium text-muted hover:text-ai-blue transition-colors">
                         {t('about')}
                     </Link>
-                    <Link href={getSectionLink('services')} className="text-sm font-medium text-muted hover:text-ai-blue transition-colors">
-                        {t('services')}
+                    <Link href={getSectionLink('offer')} className="text-sm font-medium text-muted hover:text-ai-blue transition-colors">
+                        {t('offer')}
                     </Link>
                     <Link href={getSectionLink('portfolio')} className="text-sm font-medium text-muted hover:text-ai-blue transition-colors">
                         {t('portfolio')}
@@ -67,7 +67,7 @@ export function Navbar() {
                     <button
                         className="md:hidden p-2 text-starlight hover:text-ai-blue transition-colors"
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        aria-label="Toggle menu"
+                        aria-label={t('menu_toggle')}
                     >
                         {isMenuOpen ? (
                             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -94,11 +94,11 @@ export function Navbar() {
                             {t('about')}
                         </Link>
                         <Link
-                            href={getSectionLink('services')}
+                            href={getSectionLink('offer')}
                             className="text-base font-medium text-muted hover:text-ai-blue transition-colors"
                             onClick={() => setIsMenuOpen(false)}
                         >
-                            {t('services')}
+                            {t('offer')}
                         </Link>
                         <Link
                             href={getSectionLink('portfolio')}
@@ -116,7 +116,7 @@ export function Navbar() {
                         </Link>
 
                         <div className="pt-4 mt-4 border-t border-white/5 flex items-center gap-4">
-                            <span className="text-sm text-muted">Language:</span>
+                            <span className="text-sm text-muted">{t('language')}:</span>
                             <div className="flex items-center gap-2 text-sm font-medium">
                                 <Link
                                     href={pathname}

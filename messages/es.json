@@ -1,71 +1,115 @@
 {
     "Navbar": {
-        "about": "Sobre Mí",
-        "services": "Servicios",
-        "portfolio": "Portafolio",
-        "contact": "Contacto"
+        "about": "Sobre mí",
+        "offer": "Oferta",
+        "portfolio": "Trabajos",
+        "contact": "Contacto",
+        "language": "Idioma",
+        "menu_toggle": "Abrir menú"
     },
     "Hero": {
         "badge": "Disponible para nuevos proyectos",
-        "headline_prefix": "Creo aplicaciones web",
-        "headline_highlight": "inteligentes.",
-        "headline_suffix": "",
-        "subheadline": "Ayudo a emprendedores y empresas a lanzar software y sitios web de alto impacto.",
-        "cta_primary": "Ver Proyectos",
-        "cta_secondary": "Contactar"
+        "headline_prefix": "Una página web para que te encuentren",
+        "headline_highlight": "y te escriban a tu WhatsApp.",
+        "subheadline": "Construcción, limpieza, plomería o jardinería, en Canadá o Estados Unidos. Precio desde 499 USD, mitad al empezar, y la página queda a tu nombre.",
+        "cta_primary": "Escríbeme",
+        "cta_secondary": "Ver precios"
     },
     "About": {
-        "title": "Sobre Mí | Jesus Salinas",
-        "headline_prefix": "Más que código,",
-        "headline_highlight": "soluciones.",
-        "description": "Desde Vancouver, aporto una sólida formación en Ciencias de la Computación y Sistemas de Información, combinando la disciplina de la ingeniería de software tradicional con el poder exponencial de la IA para entregar resultados robustos en semanas, no meses. Me actualizo constantemente con las últimas tecnologías para ofrecerte los mejores resultados.",
-        "stats": {
-            "experience": "Experiencia",
-            "satisfaction": "Satisfacción",
-            "projects": "Proyectos"
-        }
+        "title": "Sobre mí",
+        "headline_prefix": "Hablas directamente conmigo,",
+        "headline_highlight": "sin intermediarios ni agencias.",
+        "p1": "Soy Jesús Salinas. Vivo en Vancouver y llevo años desarrollando páginas y software para negocios que ya facturan. Tus consultas y el desarrollo los atiendo yo, en español. Uso inteligencia artificial como herramienta de trabajo, y por eso entrego rápido y a precio fijo. En tu página no va ningún robot ni chat automático.",
+        "p2": "Al terminar te entrego la página con todos sus accesos, a tu nombre y en tus cuentas, lista para recibir clientes. Desde ese día es completamente tuya y la puedes modificar o ampliar cuando lo necesites."
     },
     "ValueProposition": {
-        "title": "¿Por qué Digital?",
-        "headline": "Potencia tu Negocio",
-        "description": "No es solo tener una web. Es crear un activo digital que trabaje para ti.",
+        "title": "Por qué una página",
+        "headline": "No se trata de estar en internet.",
+        "description": "Se trata de que tus clientes te escriban.",
         "cards": {
-            "credibility": {
-                "title": "Credibilidad Inmediata",
-                "desc": "Tu primera impresión es digital. Convierte visitas en confianza con una presencia premium."
+            "search": {
+                "title": "Te buscan antes de decidir.",
+                "desc": "Si no encuentran nada tuyo, o solo un Facebook abandonado, terminan llamando al que sí tiene página."
             },
-            "automation": {
-                "title": "Automatización y Escala",
-                "desc": "Deja de usar Excel. Sistematiza tus operaciones y ahorra horas cada semana."
+            "whatsapp": {
+                "title": "Te escriben por WhatsApp.",
+                "desc": "Tu página lleva un botón que abre tu chat al instante. El mensaje llega a tu teléfono y tú atiendes a tu cliente. Yo no me meto en tus conversaciones."
             },
-            "global": {
-                "title": "Alcance Global",
-                "desc": "Tu negocio abierto 24/7, sin fronteras. Llega a clientes más allá de tu zona local."
+            "ownership": {
+                "title": "La página es tuya.",
+                "desc": "Queda a tu nombre y en tus cuentas."
             }
         }
     },
-    "Services": {
-        "title": "Servicios",
-        "headline": "Productos Digitales de Alto Impacto",
-        "description": "Más que solo construir sitios web, creo activos digitales diseñados para hacer crecer tu negocio.",
-        "cards": {
-            "web_dev": {
-                "title": "Desarrollo Web Acelerado",
-                "desc": "Sitios modernos con Next.js y Tailwind. Rápidos, optimizados para SEO y hermosos."
+    "Offer": {
+        "title": "Oferta",
+        "headline": "Una página, precio fijo, sin cobro por horas.",
+        "plans": {
+            "one_language": {
+                "title": "Un idioma",
+                "price": "550 CAD en Canadá, 499 USD en Estados Unidos.",
+                "desc": "Una sola página con lo que un cliente necesita para decidir: a qué te dedicas, la zona que atiendes, hasta doce fotos tuyas y el botón a tu WhatsApp. Se ve bien en el celular e incluye un ciclo de cambios. Sale estructurada para que Google y los asistentes de IA entiendan tu oficio y tu zona. Pagas la mitad al empezar y el dominio queda a tu nombre."
             },
-            "saas": {
-                "title": "SaaS y Web Apps",
-                "desc": "Aplicaciones complejas con autenticación, bases de datos (Supabase) y pagos."
+            "two_languages": {
+                "title": "Dos idiomas",
+                "price": "750 CAD en Canadá, 699 USD en Estados Unidos.",
+                "desc": "La misma página en español e inglés. No es un segundo sitio ni el doble de trabajo para ti."
             },
-            "consulting": {
-                "title": "Consultoría Técnica",
-                "desc": "Asesoramiento estratégico sobre stack tecnológico, integración de IA y transformación digital."
+            "google_maps": {
+                "title": "Google Maps, aparte",
+                "price": "80 CAD en Canadá, 59 USD en Estados Unidos.",
+                "desc": "Creo o arreglo tu ficha para que aparezcas en el mapa con tu horario, tu zona y tus fotos. Al terminar te entrego todas las credenciales y la ficha queda a tu nombre."
+            },
+            "domain_email": {
+                "title": "Correo con tu dominio, aparte",
+                "price": "120 CAD el primer buzón y 40 CAD por cada buzón adicional. En Estados Unidos, 89 USD y 30 USD.",
+                "desc": "<code>tu@tudominio.com</code> funcionando en Gmail, el mismo que ya usas. Configuro el correo y los DNS de tu dominio, y te entrego todas las credenciales. La renta mensual se la pagas a Google, unos 7 USD por persona o 9.20 CAD en Canadá. Con un buzón alcanza si trabajas solo, porque <code>info@</code> puede caer en la misma bandeja."
             }
-        }
+        },
+        "demos_label": "Mira tres ejemplos:",
+        "demo_link": "demo {number}",
+        "not_included": "Qué no incluye: tienda en línea, aplicaciones, hosting, dominio, la renta mensual de Google, publicidad, manejo de redes ni posiciones garantizadas en Google."
     },
-    "TechStack": {
-        "title": "Mi Stack Tecnológico",
-        "subtitle": "Potenciado por tecnologías modernas y robustas."
+    "FAQ": {
+        "title": "Preguntas",
+        "items": [
+            {
+                "q": "¿Hay que hacer una llamada?",
+                "a": "No. Todo se cierra por escrito, por correo. Si prefieres hablar, hacemos una videollamada de veinte minutos en español, y después te dejo por escrito el acuerdo: condiciones, personalizaciones y precio."
+            },
+            {
+                "q": "¿Quién es dueño del dominio y del hosting?",
+                "a": "Tú. Se registran a tu nombre y en tus cuentas, y al terminar te entrego todas las credenciales."
+            },
+            {
+                "q": "¿El correo con mi dominio entra en el precio de la página?",
+                "a": "No, va aparte. Son 120 CAD el primer buzón y 40 CAD por cada adicional, o 89 y 30 USD en Estados Unidos. La renta mensual se la pagas a Google, no a mí."
+            },
+            {
+                "q": "¿Te tengo que pagar cada mes?",
+                "a": "No. La página se paga una sola vez. Lo único que se renueva es tu dominio, una vez al año con tu proveedor, y el correo de Google si decides tenerlo."
+            },
+            {
+                "q": "¿La página me va a poner primero en Google?",
+                "a": "Nadie te puede prometer eso, y quien lo hace te está vendiendo humo. Lo que sí te entrego es una página con su optimización inicial hecha: tu oficio, tu zona, los datos de tu negocio y las preguntas que te hacen tus clientes, escritos para que Google y los asistentes de IA los entiendan. De ahí en adelante, dónde apareces depende de la información que tú me des, de tu ciudad y de cuántos negocios como el tuyo ya están ahí."
+            },
+            {
+                "q": "¿Hacen trabajo de posicionamiento cada mes?",
+                "a": "No. La optimización va incluida una sola vez, cuando construyo la página: títulos, zona, datos de tu negocio y este bloque de preguntas. No vendo campañas mensuales de posicionamiento ni anuncios."
+            },
+            {
+                "q": "¿Cuándo la entregas?",
+                "a": "Cuando me llega tu material completo, fotos, textos, zona y tu número de WhatsApp, empieza a contar. Desde ese momento tienes la primera versión en un máximo de tres días hábiles, y después entra tu ciclo de cambios."
+            },
+            {
+                "q": "¿Sirve para mi negocio de comida o para otro rubro?",
+                "a": "Sí, si tu negocio es local y atiendes por WhatsApp. Me especializo en construcción, limpieza y oficios, así que si lo tuyo es otra cosa, escríbeme y te digo de frente si te sirve."
+            },
+            {
+                "q": "¿Cómo se paga?",
+                "a": "Mitad al empezar y mitad al entregar. En Canadá por Interac, en dólares canadienses. En Estados Unidos por factura de PayPal, bienes y servicios, en dólares."
+            }
+        ]
     },
     "Portfolio": {
         "title": "Portafolio",
@@ -106,24 +150,24 @@
     },
     "Contact": {
         "title": "Contacto",
-        "headline": "¿Listo para",
-        "headline_highlight": "Elevar tu Marca?",
-        "description": "Hablemos de tu proyecto. Respondo en menos de 24 horas.",
-        "say_hello": "Saludar",
+        "headline": "Escríbeme",
+        "headline_highlight": "y te respondo en un día hábil, en español.",
+        "description": "Cuéntame a qué te dedicas, en qué ciudad trabajas y si la quieres en un idioma o en dos.",
         "linkedin": "LinkedIn",
-        "footer": "Creado con Next.js, TypeScript y Tailwind.",
-        "footer_privacy": "Política de Privacidad",
+        "footer_name": "Jesús Salinas",
+        "footer_city": "Vancouver",
+        "footer_privacy": "Política de privacidad",
         "form": {
             "name": "Nombre",
             "name_placeholder": "Juan Pérez",
             "email": "Correo",
             "email_placeholder": "juan@ejemplo.com",
             "message": "Mensaje",
-            "message_placeholder": "Cuéntame sobre tu proyecto...",
-            "send": "Enviar Mensaje",
-            "sending": "Enviando...",
-            "success": "¡Mensaje enviado! Te responderé pronto.",
-            "error": "Algo salió mal. Por favor intenta de nuevo."
+            "send": "Enviar mensaje",
+            "sending": "Enviando…",
+            "sent": "Enviado",
+            "success": "Listo, me llegó tu mensaje. Te respondo en un día hábil.",
+            "error": "No se pudo enviar. Inténtalo de nuevo o escríbeme a hello@jsalinas.dev."
         }
     },
     "PrivacyPolicy": {
