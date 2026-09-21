@@ -90,6 +90,11 @@
                 "desc": "<code>tu@tudominio.com</code> funcionando en Gmail, el mismo que ya usas. Configuro el correo y los DNS de tu dominio, y te entrego todas las credenciales. La renta mensual se la pagas a Google, unos 7 USD por persona o 9.20 CAD en Canadá. Con un buzón alcanza si trabajas solo, porque <code>info@</code> puede caer en la misma bandeja."
             }
         },
+        "other": {
+            "title": "¿Necesitas otro servicio digital?",
+            "desc": "También hago herramientas a la medida para tu negocio, aparte de la página y con su propio presupuesto: agenda de citas, cotizaciones en línea, un portal para tus clientes o control de trabajos. Cuéntame qué necesitas y te digo si te lo puedo hacer y cuánto costaría.",
+            "cta": "Cuéntame qué necesitas"
+        },
         "demos_label": "Mira tres ejemplos:",
         "demo_link": "demo {number}",
         "not_included": "Qué no incluye: tienda en línea, aplicaciones, hosting, dominio, la renta mensual de Google, publicidad, manejo de redes ni posiciones garantizadas en Google."

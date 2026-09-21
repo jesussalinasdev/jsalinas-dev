@@ -328,11 +328,16 @@ export function mountSignal(canvas: HTMLCanvasElement) {
 
     document.addEventListener('visibilitychange', () => (document.hidden ? stop() : run()));
 
-    // Any element can ask for a ripple from itself (e.g. a message arriving).
+    // Any element can ask for a ripple from itself (e.g. a message arriving),
+    // at most one every REQUEST_GAP seconds so the field stays calm.
+    const REQUEST_GAP = 5;
+    let lastRequest = -Infinity;
     document.addEventListener('signal:request', (e) => {
-        if (still) return;
+        if (still || now - lastRequest < REQUEST_GAP) return;
         const el = (e as CustomEvent<{ el?: Element }>).detail?.el;
-        if (el) addRipple(...pointOf(el), 1.15);
+        if (!el) return;
+        lastRequest = now;
+        addRipple(...pointOf(el), 1.15);
     });
 
     // Taps and clicks do not ripple: on phones every scroll gesture would fire one.

@@ -90,6 +90,11 @@
                 "desc": "<code>you@yourdomain.com</code> running in Gmail, the one you already use. I set up the mail and your domain’s DNS, and I hand you every login. The monthly fee goes to Google, about $7 per person or C$9.20 in Canada. One mailbox is enough if you work alone, since <code>info@</code> can land in the same inbox."
             }
         },
+        "other": {
+            "title": "Need something else built?",
+            "desc": "I also build custom tools for your business, separate from the page and with their own quote: online booking, quote requests, a portal for your customers or job tracking. Tell me what you need and I will tell you if I can build it and what it would cost.",
+            "cta": "Tell me what you need"
+        },
         "demos_label": "See three examples:",
         "demo_link": "demo {number}",
         "not_included": "What is not included: an online store, apps, hosting, a domain, Google’s monthly fee, advertising, running your socials, or guaranteed positions on Google."

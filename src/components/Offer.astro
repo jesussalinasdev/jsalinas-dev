@@ -1,4 +1,5 @@
 ---
+import Icon from './Icon.astro';
 import { demos, demosReady } from '../data/demos';
 import { useTranslations, type Locale } from '../i18n';
 
@@ -41,6 +42,14 @@ const extras = ['google_maps', 'domain_email'];
                     </article>
                 ))
             }
+            <article class="extra extra--other" data-arrive style="--i: 2">
+                <h3 class="extra__name">{t('Offer.other.title')}</h3>
+                <p class="extra__desc">{t('Offer.other.desc')}</p>
+                <a class="extra__cta" href="#contact">
+                    {t('Offer.other.cta')}
+                    <Icon name="arrow" />
+                </a>
+            </article>
         </div>
 
         {
@@ -119,8 +128,8 @@ const extras = ['google_maps', 'domain_email'];
 
     .offer__extras {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 0 clamp(2rem, 5vw, 5rem);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0 clamp(1.75rem, 3.5vw, 3.5rem);
         margin-top: clamp(3.5rem, 6vw, 5rem);
         border-top: 1.5px solid oklch(96% 0.012 85 / 0.45);
     }
@@ -142,10 +151,42 @@ const extras = ['google_maps', 'domain_email'];
     }
 
     .extra__desc {
-        max-width: 60ch;
+        max-width: 48ch;
         margin-top: 0.9rem;
         color: var(--on-deep-2);
         font-size: 1rem;
+    }
+
+    /* The open door: same column rhythm, set apart by a soft panel */
+    .extra--other {
+        margin-top: 1.75rem;
+        padding: 1.5rem 1.5rem 1.6rem;
+        border-radius: var(--radius-panel);
+        background: oklch(96% 0.012 85 / 0.08);
+        border: 1px solid oklch(96% 0.012 85 / 0.22);
+    }
+
+    .extra__cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 1.25rem;
+        color: var(--text);
+        font-weight: 680;
+        font-stretch: 108%;
+        text-decoration: underline;
+        text-decoration-thickness: 1.5px;
+        text-underline-offset: 0.3em;
+    }
+
+    .extra__cta :global(svg) {
+        width: 1.1rem;
+        height: 1.1rem;
+        transition: transform 0.35s var(--ease-out);
+    }
+
+    .extra__cta:hover :global(svg) {
+        transform: translateX(3px);
     }
 
     .offer :global(code) {
@@ -163,12 +204,22 @@ const extras = ['google_maps', 'domain_email'];
     }
 
     .offer__excluded {
-        max-width: 70ch;
+        max-width: none;
         margin-top: clamp(3.5rem, 6vw, 5rem);
         padding-top: 1.5rem;
         border-top: 1.5px solid oklch(96% 0.012 85 / 0.45);
         color: var(--on-deep-2);
         font-size: 1rem;
+    }
+
+    @media (max-width: 1100px) {
+        .offer__extras {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .extra--other {
+            grid-column: 1 / -1;
+        }
     }
 
     @media (max-width: 760px) {

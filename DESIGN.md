@@ -301,7 +301,7 @@ The stack lives inside a phone: a 23rem device with a 2.6rem Well Ink bezel, Str
 The brief-pinned Annex A availability line ("Disponible para nuevos proyectos" / "Available for new projects") sits under the hero actions as a plain Label-type line in Mist with a 0.55rem signal-yellow dot whose ring pings three times (2.4s each) and then stops. It is never a pill or eyebrow above the headline.
 
 ### Offer Field
-The drenched section: plans in two columns under a 3px ink rule, each with a large Title name, a tabular price line and Deep Cobalt Soft description; extras in a second two-column row under a 1.5px rule; the exclusions line last under its own rule. The demo links line appears only once all three demos have a URL. Stacks to one column at 760px with 1.5px rules between items.
+The drenched section on Deep Cobalt: the two plans in two columns under a 3px Warm White rule, each with a large Title name, a tabular price line and Deep Cobalt Soft description; then a row of three under a 1.5px rule: Google Maps, domain email, and the open door "¿Necesitas otro servicio digital?" (`Offer.other`), set apart as a soft panel (8% white fill, 22% white edge, `panel` radius) with an underlined arrow link to Contact. The exclusions line closes the section full width under its own rule. The demo links line appears only once all three demos have a URL. At 1100px the row becomes two columns with the open door full width; at 760px everything stacks with 1.5px rules between items.
 
 ### Why Path
 Three stations on one 1.5px Strong Hairline: each node is a 1.4rem ring with a cobalt stroke and a cobalt core, followed by a Title h3 and Mist copy capped at 34ch. Vertical with left-hung nodes on phones.
