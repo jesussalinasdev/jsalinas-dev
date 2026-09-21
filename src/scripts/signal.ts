@@ -335,12 +335,9 @@ export function mountSignal(canvas: HTMLCanvasElement) {
         if (el) addRipple(...pointOf(el), 1.15);
     });
 
+    // Taps and clicks do not ripple: on phones every scroll gesture would fire one.
+    // Only a mouse leans the waves, gently.
     for (const s of sections) {
-        s.addEventListener('pointerdown', (e) => {
-            if (still) return;
-            if ((e.target as HTMLElement).closest('a, button, input, textarea, label, summary')) return;
-            addRipple(e.clientX / innerWidth, e.clientY + scrollY, 1.1);
-        });
         s.addEventListener('pointermove', (e) => {
             if (e.pointerType !== 'mouse') return;
             pointer.tx = e.clientX / innerWidth;

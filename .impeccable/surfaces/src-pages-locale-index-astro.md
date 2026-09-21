@@ -19,6 +19,6 @@ FIRST VIEWPORT: Full-bleed shader. Top-left wordmark, nav right. Headline in exp
 
 FORM: Portal WebGL, adopted by Ryot from the declined challenger list (catalog id webgl-shader-portal), adapted for trades and phones; seed key 6c7df5de.
 
-SIGNATURE: Tap or click anywhere on a shader section sends a new ripple from that point; the hero bubble arrives on the first ripple. Motion grammar: arrival (rise plus unblur, exponential ease-out) orchestrated per section; reduced motion or weak device shows a still frame.
+SIGNATURE: Each message that lands in the hero phone sends a ripple from its bubble; Why and Contact ping on their own every few seconds. Taps do not ripple, so the field flows by itself. Motion grammar: arrival (rise plus unblur, exponential ease-out) orchestrated per section; reduced motion or weak device shows still frames.
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance

@@ -7,13 +7,14 @@ interface Props {
 
 const { locale } = Astro.props;
 const t = useTranslations(locale);
+const year = new Date().getFullYear();
 ---
 
 <footer class="footer">
     <div class="footer__row wrap">
         <p class="footer__brand">jsalinas<span>.dev</span></p>
         <ul class="footer__links">
-            <li>{t('Contact.footer_name')}</li>
+            <li>&copy; <span data-year>{year}</span> {t('Contact.footer_name')}</li>
             <li>{t('Contact.footer_city')}</li>
             <li>
                 <a href="https://www.linkedin.com/in/jesus-salinas-6488b528a/" target="_blank" rel="noopener noreferrer">
@@ -71,3 +72,9 @@ const t = useTranslations(locale);
         text-decoration-color: currentColor;
     }
 </style>
+
+<script>
+    // The build fixes the year; the browser keeps it current between deploys.
+    const year = String(new Date().getFullYear());
+    document.querySelectorAll<HTMLElement>('[data-year]').forEach((el) => (el.textContent = year));
+</script>
