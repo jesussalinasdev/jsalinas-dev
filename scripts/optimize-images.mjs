@@ -7,19 +7,17 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const publicDir = path.join(__dirname, '../public');
-const images = [
-    'below-zero-dashboard.png',
-    'below-zero-site.png',
-    'cynthia-site.png',
-    'jesus-bw.png'
-];
+// Every PNG or JPG dropped into public/ (except the favicon) gets a WebP next to it.
+const images = fs
+    .readdirSync(publicDir)
+    .filter((file) => /\.(png|jpe?g)$/i.test(file) && file !== 'jsalinas-favicon.png');
 
 async function optimizeImages() {
     console.log('Starting image optimization...');
 
     for (const image of images) {
         const inputPath = path.join(publicDir, image);
-        const outputPath = path.join(publicDir, image.replace('.png', '.webp'));
+        const outputPath = path.join(publicDir, image.replace(/\.(png|jpe?g)$/i, '.webp'));
 
         if (fs.existsSync(inputPath)) {
             try {
