@@ -278,7 +278,7 @@ One pill family, 3.25rem tall, Control type, with an optional trailing 1.15em st
 - **Error:** `:user-invalid` turns the stroke Alarm. Form-level success and error messages are `field`-rounded tinted blocks (field-blue wash, alarm wash).
 
 ### Cards / Containers
-There are no card grids. Content is laid on the ground and divided by rules.
+There are no card grids for content: sections are laid on the ground and divided by rules. The one exception is pricing, where each card is a separate thing to buy (see Offer Field).
 - **Form panel:** Raised Ink, 1px Hairline border, `panel` radius, Lift, clamped padding.
 - **Portrait:** 4:5, `panel` radius, full grayscale with slight contrast, warming to 20% grayscale on hover, ringed by the Ripple Mark.
 
@@ -301,7 +301,7 @@ The stack lives inside a phone: a 23rem device with a 2.6rem Well Ink bezel, Str
 The brief-pinned Annex A availability line ("Disponible para nuevos proyectos" / "Available for new projects") sits under the hero actions as a plain Label-type line in Mist with a 0.55rem signal-yellow dot whose ring pings three times (2.4s each) and then stops. It is never a pill or eyebrow above the headline.
 
 ### Offer Field
-The drenched section on Deep Cobalt: the two plans in two columns under a 3px Warm White rule, each with a large Title name, a tabular price line and Deep Cobalt Soft description; then a row of three under a 1.5px rule: Google Maps, domain email, and the open door "¿Necesitas otro servicio digital?" (`Offer.other`), set apart as a soft panel (8% white fill, 22% white edge, `panel` radius) with an underlined arrow link to Contact. The exclusions line closes the section full width under its own rule. The demo links line appears only once all three demos have a URL. At 1100px the row becomes two columns with the open door full width; at 760px everything stacks with 1.5px rules between items.
+The drenched section on Deep Cobalt, laid out on one two-column grid so every row lines up: the two plans first, Google Maps and domain email below. Each is a subtle price card (6% white fill, 18% white edge, `panel` radius; the edge brightens to 38% on hover) holding the name, the price line over a hairline, and Deep Cobalt Soft description; cards in a row share their height. Plans set a larger name and price than the add-ons. Under the grid, the open door "¿Necesitas otro servicio digital?" (`Offer.other`) runs full width as a band (11% white fill) with the copy left and a Warm White pill button with Deep Cobalt text right. The exclusions line closes the section as a small note. The demo links line appears only once all three demos have a URL. At 860px the band stacks; at 700px the grid becomes one column and the band button goes full width.
 
 ### Why Path
 Three stations on one 1.5px Strong Hairline: each node is a 1.4rem ring with a cobalt stroke and a cobalt core, followed by a Title h3 and Mist copy capped at 34ch. Vertical with left-hung nodes on phones.

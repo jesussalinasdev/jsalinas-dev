@@ -10,47 +10,41 @@ interface Props {
 const { locale } = Astro.props;
 const t = useTranslations(locale);
 
-const plans = ['one_language', 'two_languages'];
-const extras = ['google_maps', 'domain_email'];
+// One two-column grid: the plans first, the add-ons below, so every row lines up.
+const items = [
+    { key: 'one_language', kind: 'plan' },
+    { key: 'two_languages', kind: 'plan' },
+    { key: 'google_maps', kind: 'extra' },
+    { key: 'domain_email', kind: 'extra' },
+];
 ---
 
 <section id="offer" class="offer section" aria-labelledby="offer-title">
     <div class="wrap">
         <h2 id="offer-title" class="section-title offer__title" data-arrive>{t('Offer.headline')}</h2>
 
-        <div class="offer__plans">
+        <div class="offer__grid">
             {
-                plans.map((key, i) => (
-                    <article class="plan" data-arrive style={`--i: ${i}`}>
-                        <header class="plan__head">
-                            <h3 class="plan__name">{t(`Offer.plans.${key}.title`)}</h3>
-                            <p class="plan__price">{t(`Offer.plans.${key}.price`)}</p>
-                        </header>
-                        <p class="plan__desc" set:html={t.rich(`Offer.plans.${key}.desc`)} />
+                items.map(({ key, kind }, i) => (
+                    <article class:list={['price', `price--${kind}`]} data-arrive style={`--i: ${i % 2}`}>
+                        <h3 class="price__name">{t(`Offer.plans.${key}.title`)}</h3>
+                        <p class="price__amount">{t(`Offer.plans.${key}.price`)}</p>
+                        <p class="price__desc" set:html={t.rich(`Offer.plans.${key}.desc`)} />
                     </article>
                 ))
             }
         </div>
 
-        <div class="offer__extras">
-            {
-                extras.map((key, i) => (
-                    <article class="extra" data-arrive style={`--i: ${i}`}>
-                        <h3 class="extra__name">{t(`Offer.plans.${key}.title`)}</h3>
-                        <p class="extra__price">{t(`Offer.plans.${key}.price`)}</p>
-                        <p class="extra__desc" set:html={t.rich(`Offer.plans.${key}.desc`)} />
-                    </article>
-                ))
-            }
-            <article class="extra extra--other" data-arrive style="--i: 2">
-                <h3 class="extra__name">{t('Offer.other.title')}</h3>
-                <p class="extra__desc">{t('Offer.other.desc')}</p>
-                <a class="extra__cta" href="#contact">
-                    {t('Offer.other.cta')}
-                    <Icon name="arrow" />
-                </a>
-            </article>
-        </div>
+        <aside class="offer__band" data-arrive>
+            <div class="offer__band-copy">
+                <h3>{t('Offer.other.title')}</h3>
+                <p>{t('Offer.other.desc')}</p>
+            </div>
+            <a class="offer__band-cta" href="#contact">
+                {t('Offer.other.cta')}
+                <Icon name="arrow" />
+            </a>
+        </aside>
 
         {
             demosReady && (
@@ -74,6 +68,9 @@ const extras = ['google_maps', 'domain_email'];
 
 <style>
     .offer {
+        --card-fill: oklch(96% 0.012 85 / 0.06);
+        --card-edge: oklch(96% 0.012 85 / 0.18);
+        --card-edge-hover: oklch(96% 0.012 85 / 0.38);
         background: var(--accent-deep);
         color: var(--text);
     }
@@ -94,99 +91,67 @@ const extras = ['google_maps', 'domain_email'];
         font-weight: 820;
     }
 
-    .offer__plans {
+    /* Subtle price cards: rows share one grid, so heights match side by side */
+    .offer__grid {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 0 clamp(2rem, 5vw, 5rem);
-        margin-top: clamp(3.5rem, 7vw, 5.5rem);
-        border-top: 3px solid var(--text);
+        gap: clamp(1rem, 1.6vw, 1.5rem);
+        margin-top: clamp(3rem, 6vw, 4.5rem);
     }
 
-    .plan {
-        padding-top: 2rem;
+    .price {
+        display: flex;
+        flex-direction: column;
+        padding: clamp(1.5rem, 2.6vw, 2.4rem);
+        border-radius: var(--radius-panel);
+        background: var(--card-fill);
+        border: 1px solid var(--card-edge);
+        transition: border-color 0.3s var(--ease-out);
     }
 
-    .plan__name {
-        font-size: clamp(2rem, 1.5rem + 1.8vw, 3.1rem);
-        font-weight: 820;
+    .price:hover {
+        border-color: var(--card-edge-hover);
     }
 
-    .plan__price {
-        margin-top: 1rem;
-        font-size: clamp(1.2rem, 1.05rem + 0.6vw, 1.55rem);
+    .price__name {
+        font-weight: 800;
+    }
+
+    .price--plan .price__name {
+        font-size: clamp(1.9rem, 1.45rem + 1.5vw, 2.8rem);
+    }
+
+    .price--extra .price__name {
+        font-size: clamp(1.35rem, 1.2rem + 0.6vw, 1.75rem);
+        font-weight: 760;
+    }
+
+    .price__amount {
+        margin-top: 0.85rem;
+        padding-bottom: 1.1rem;
+        border-bottom: 1px solid var(--card-edge);
         font-weight: 720;
         font-stretch: 110%;
         line-height: 1.3;
         font-variant-numeric: tabular-nums;
     }
 
-    .plan__desc {
+    .price--plan .price__amount {
+        font-size: clamp(1.15rem, 1.05rem + 0.45vw, 1.45rem);
+    }
+
+    .price--extra .price__amount {
+        font-size: 1.02rem;
+    }
+
+    .price__desc {
         max-width: 60ch;
-        margin-top: 1.5rem;
+        margin-top: 1.1rem;
         color: var(--on-deep-2);
     }
 
-    .offer__extras {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 0 clamp(1.75rem, 3.5vw, 3.5rem);
-        margin-top: clamp(3.5rem, 6vw, 5rem);
-        border-top: 1.5px solid oklch(96% 0.012 85 / 0.45);
-    }
-
-    .extra {
-        padding-top: 1.75rem;
-    }
-
-    .extra__name {
-        font-size: clamp(1.35rem, 1.2rem + 0.6vw, 1.75rem);
-        font-weight: 760;
-    }
-
-    .extra__price {
-        margin-top: 0.6rem;
-        font-weight: 680;
-        font-stretch: 108%;
-        font-variant-numeric: tabular-nums;
-    }
-
-    .extra__desc {
-        max-width: 48ch;
-        margin-top: 0.9rem;
-        color: var(--on-deep-2);
+    .price--extra .price__desc {
         font-size: 1rem;
-    }
-
-    /* The open door: same column rhythm, set apart by a soft panel */
-    .extra--other {
-        margin-top: 1.75rem;
-        padding: 1.5rem 1.5rem 1.6rem;
-        border-radius: var(--radius-panel);
-        background: oklch(96% 0.012 85 / 0.08);
-        border: 1px solid oklch(96% 0.012 85 / 0.22);
-    }
-
-    .extra__cta {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        margin-top: 1.25rem;
-        color: var(--text);
-        font-weight: 680;
-        font-stretch: 108%;
-        text-decoration: underline;
-        text-decoration-thickness: 1.5px;
-        text-underline-offset: 0.3em;
-    }
-
-    .extra__cta :global(svg) {
-        width: 1.1rem;
-        height: 1.1rem;
-        transition: transform 0.35s var(--ease-out);
-    }
-
-    .extra__cta:hover :global(svg) {
-        transform: translateX(3px);
     }
 
     .offer :global(code) {
@@ -194,8 +159,70 @@ const extras = ['google_maps', 'domain_email'];
         color: var(--accent-hot);
     }
 
+    /* The open door for other work: a full-width band under the prices */
+    .offer__band {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 1.5rem 3rem;
+        margin-top: clamp(1rem, 1.6vw, 1.5rem);
+        padding: clamp(1.5rem, 2.6vw, 2.2rem) clamp(1.5rem, 2.6vw, 2.4rem);
+        border-radius: var(--radius-panel);
+        background: oklch(96% 0.012 85 / 0.11);
+        border: 1px solid var(--card-edge);
+    }
+
+    .offer__band h3 {
+        font-size: clamp(1.35rem, 1.2rem + 0.6vw, 1.75rem);
+        font-weight: 780;
+    }
+
+    .offer__band p {
+        max-width: 72ch;
+        margin-top: 0.6rem;
+        color: var(--on-deep-2);
+        font-size: 1rem;
+    }
+
+    .offer__band-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.55rem;
+        min-height: 3.1rem;
+        padding: 0 1.4rem;
+        border-radius: var(--radius-pill);
+        background: var(--text);
+        color: var(--accent-deep);
+        font-weight: 700;
+        font-stretch: 108%;
+        text-decoration: none;
+        white-space: nowrap;
+        transition:
+            background-color 0.25s var(--ease-out),
+            transform 0.25s var(--ease-out);
+    }
+
+    .offer__band-cta:hover {
+        background: oklch(100% 0 0);
+    }
+
+    .offer__band-cta:active {
+        transform: scale(0.98);
+    }
+
+    .offer__band-cta :global(svg) {
+        width: 1.1rem;
+        height: 1.1rem;
+        transition: transform 0.35s var(--ease-out);
+    }
+
+    .offer__band-cta:hover :global(svg) {
+        transform: translateX(3px);
+    }
+
     .offer__demos {
-        margin-top: 3rem;
+        margin-top: 2.5rem;
         font-weight: 650;
     }
 
@@ -204,34 +231,28 @@ const extras = ['google_maps', 'domain_email'];
     }
 
     .offer__excluded {
-        max-width: none;
-        margin-top: clamp(3.5rem, 6vw, 5rem);
-        padding-top: 1.5rem;
-        border-top: 1.5px solid oklch(96% 0.012 85 / 0.45);
+        margin-top: clamp(2rem, 4vw, 3rem);
         color: var(--on-deep-2);
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
-    @media (max-width: 1100px) {
-        .offer__extras {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .extra--other {
-            grid-column: 1 / -1;
-        }
-    }
-
-    @media (max-width: 760px) {
-        .offer__plans,
-        .offer__extras {
+    @media (max-width: 860px) {
+        .offer__band {
             grid-template-columns: minmax(0, 1fr);
         }
 
-        .plan + .plan,
-        .extra + .extra {
-            margin-top: 2.5rem;
-            border-top: 1.5px solid oklch(96% 0.012 85 / 0.45);
+        .offer__band-cta {
+            justify-self: start;
+        }
+    }
+
+    @media (max-width: 700px) {
+        .offer__grid {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .offer__band-cta {
+            justify-self: stretch;
         }
     }
 </style>
