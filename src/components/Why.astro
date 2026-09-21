@@ -1,0 +1,141 @@
+---
+import { useTranslations, type Locale } from '../i18n';
+
+interface Props {
+    locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const steps = ['search', 'whatsapp', 'ownership'];
+---
+
+<section class="why section" aria-labelledby="why-title" data-field data-field-x="0.88" data-field-y="0.22" data-field-ping="4.6" data-field-shade="0.55">
+    <div class="why__inner wrap">
+        <header class="why__head">
+            <h2 id="why-title" class="section-title" data-arrive>{t('ValueProposition.headline')}</h2>
+            <p class="why__lede" data-arrive style="--i: 1">{t('ValueProposition.description')}</p>
+        </header>
+
+        <ol class="why__path">
+            {
+                steps.map((key, i) => (
+                    <li class="why__step" data-arrive style={`--i: ${i}`}>
+                        <span class="why__node" aria-hidden="true" />
+                        <h3>{t(`ValueProposition.cards.${key}.title`)}</h3>
+                        <p>{t(`ValueProposition.cards.${key}.desc`)}</p>
+                    </li>
+                ))
+            }
+        </ol>
+    </div>
+</section>
+
+<style>
+    .why {
+        overflow: hidden;
+    }
+
+    .why__inner {
+        position: relative;
+        z-index: 1;
+    }
+
+    .why__node {
+        background: var(--ink-0);
+    }
+
+    .why__head {
+        max-width: 60rem;
+    }
+
+    .why__lede {
+        margin-top: 0.85rem;
+        color: var(--accent);
+        font-size: clamp(1.6rem, 1.1rem + 2.1vw, 2.9rem);
+        font-weight: 720;
+        font-stretch: 114%;
+        line-height: 1.08;
+        letter-spacing: -0.02em;
+        text-wrap: balance;
+    }
+
+    /* Three stations on one line: found, messaged, owned */
+    .why__path {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(2rem, 4vw, 4rem);
+        margin-top: clamp(4rem, 8vw, 6.5rem);
+        padding: 0;
+        list-style: none;
+    }
+
+    .why__path::before {
+        content: '';
+        position: absolute;
+        left: 0.7rem;
+        right: 0;
+        top: 0.7rem;
+        height: 1.5px;
+        background: var(--rule-strong);
+    }
+
+    .why__step {
+        position: relative;
+    }
+
+    .why__node {
+        position: relative;
+        display: block;
+        width: 1.4rem;
+        height: 1.4rem;
+        margin-bottom: 2rem;
+        border-radius: 50%;
+        border: 2px solid var(--accent);
+    }
+
+    .why__node::after {
+        content: '';
+        position: absolute;
+        inset: 0.25rem;
+        border-radius: 50%;
+        background: var(--accent);
+    }
+
+    .why__step h3 {
+        font-size: clamp(1.45rem, 1.2rem + 0.9vw, 2rem);
+        font-weight: 740;
+        line-height: 1.05;
+    }
+
+    .why__step p {
+        max-width: 34ch;
+        margin-top: 1rem;
+        color: var(--text-2);
+    }
+
+    @media (max-width: 860px) {
+        .why__path {
+            grid-template-columns: minmax(0, 1fr);
+            gap: 2.75rem;
+            padding-left: 2.75rem;
+        }
+
+        .why__path::before {
+            left: 0.7rem;
+            right: auto;
+            top: 0.7rem;
+            bottom: 0.7rem;
+            width: 1.5px;
+            height: auto;
+        }
+
+        .why__node {
+            position: absolute;
+            left: -2.75rem;
+            top: 0.1rem;
+            margin: 0;
+        }
+    }
+</style>

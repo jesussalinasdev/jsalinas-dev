@@ -1,11 +1,20 @@
 {
+    "Meta": {
+        "title": "A website with WhatsApp for your business | Jesús Salinas",
+        "description": "What you do, where you work, and how to message you on WhatsApp, on one page. From $499 USD, no surprises, and it stays in your name. In Spanish or English."
+    },
     "Navbar": {
         "about": "About",
         "offer": "Offer",
         "portfolio": "Work",
         "contact": "Contact",
         "language": "Language",
-        "menu_toggle": "Open menu"
+        "menu_toggle": "Open menu",
+        "skip_link": "Skip to content",
+        "nav_label": "Main",
+        "language_es": "Español",
+        "language_en": "English",
+        "menu_close": "Close menu"
     },
     "Hero": {
         "badge": "Available for new projects",
@@ -13,7 +22,22 @@
         "headline_highlight": "and message your WhatsApp.",
         "subheadline": "Construction, cleaning, plumbing, or landscaping, in Canada or the United States. From $499 USD, half to start, and the site stays in your name.",
         "cta_primary": "Get in touch",
-        "cta_secondary": "See prices"
+        "cta_secondary": "See prices",
+        "example_label": "Example",
+        "example_messages": [
+            "Hi, I saw your website. Do you do bathroom remodels in Surrey?",
+            "Hi, how much to clean a three-bedroom house in Burnaby?",
+            "I have a leak under the kitchen sink. Can you come today?",
+            "Do you do weekly yard maintenance in Richmond?",
+            "Hi, I need a quote to paint the outside of my house.",
+            "Do you work Saturdays? I want to redo the kitchen floor.",
+            "A friend gave me your number. Do you do post-construction cleanup?",
+            "Do you install water heaters? Mine just stopped working.",
+            "Good afternoon, do you mow lawns and trim trees in Coquitlam?",
+            "I saw the photos of your work. Can you send me a quote?"
+        ],
+        "example_status": "New message",
+        "chat_title": "Your business"
     },
     "About": {
         "title": "About",
@@ -36,8 +60,8 @@
                 "desc": "Your page has a button that opens your chat right away. The message lands on your phone and you answer your own customer. I stay out of your conversations."
             },
             "ownership": {
-                "title": "The site is yours.",
-                "desc": "In your name and in your accounts."
+                "title": "You hold the keys.",
+                "desc": "The domain and the hosting are in your name, in your accounts. When we finish I hand you every login, so you can change it or grow it whenever you want, without depending on me."
             }
         }
     },
@@ -112,41 +136,12 @@
         ]
     },
     "Portfolio": {
-        "title": "Portfolio",
-        "headline": "Selected Work",
-        "description": "A mix of complex web applications and high-impact marketing sites.",
-        "private_access": "Private Access",
-        "visit_site": "Visit Site",
-        "projects": {
-            "below_zero_app": {
-                "title": "Below Zero App",
-                "description": "A comprehensive SaaS platform for scientific refrigeration teams. Features real-time scheduling, QR code asset tracking, and automated invoicing for streamlined operations."
-            },
-            "below_zero_site": {
-                "title": "below-zero.ca",
-                "description": "Corporate website for a leader in the installation and repair of scientific refrigeration equipment. Focused on SEO, lead generation, and high-performance loading speeds."
-            },
-            "cynthia": {
-                "title": "cynthiamedrano.ca",
-                "description": "Professional services portfolio for a tax consultant. Features a clean, multilingual design with an integrated booking system to streamline client appointments and service inquiries."
-            },
-            "giuseppe_febres": {
-                "title": "Giuseppe Febres Portfolio",
-                "description": "Professional portfolio for a digital marketer specializing in data-driven campaigns and brand storytelling."
-            },
-            "locky": {
-                "title": "Locky Password Manager",
-                "description": "A secure password manager built with Next.js and Supabase. Features vaulted credentials, team sharing capabilities, and military-grade encryption for sensitive data."
-            },
-            "cynthia_tracker": {
-                "title": "Tax Return Tracker",
-                "description": "A dedicated tracking system for tax return processes. Clients check status in real-time, improving transparency and reducing support inquiries."
-            },
-            "cynthia_clients": {
-                "title": "Cynthia Clients & Process",
-                "description": "Internal CRM for managing client portfolios and tax return workflows. Features automated status updates, document centralization, and secure client communication."
-            }
-        }
+        "title": "Work",
+        "headline": "Here is what yours could look like.",
+        "description": "Three sample pages, built on the same template I use for your business.",
+        "slot_label": "Example {number}",
+        "slot_soon": "Coming soon",
+        "view_demo": "See the example"
     },
     "Contact": {
         "title": "Contact",
@@ -171,18 +166,24 @@
         }
     },
     "PrivacyPolicy": {
-        "title": "Privacy Policy",
-        "last_updated": "Last Updated: December 2025",
-        "intro": "At jsalinas.dev, I respect your privacy and am committed to protecting the personal information you share with me.",
-        "collection_title": "Information Collection",
-        "collection_text": "I collect information that you voluntarily provide when contacting me directly via email or any future forms, including your name, email address, and message content.",
-        "usage_title": "Use of Information",
-        "usage_text": "The information collected is used solely to respond to your inquiries and discuss potential projects. I do not sell, trade, or otherwise transfer your personal information to outside parties.",
-        "analytics_title": "Cookies and Analytics",
-        "analytics_text": "This website uses basic analytics tools (like Vercel Web Analytics) to monitor traffic and improve performance. These tools may collect anonymous usage data. I do not use intrusive tracking or sell this data.",
-        "protection_title": "Data Protection",
-        "protection_text": "I implement reasonable security measures to maintain the safety of your personal information.",
-        "contact_title": "Contact Me",
-        "contact_text": "If you have any questions about this Privacy Policy, please contact me at hello@jsalinas.dev."
+        "title": "Privacy policy",
+        "last_updated": "Last updated: September 2026",
+        "intro": "I take care of the information you share with me. This page tells you what I receive, what I use it for, and who else handles it.",
+        "collection_title": "What I receive",
+        "collection_text": "Only what you send me: your name, your email and your message, when you write through the form on this page or to hello@jsalinas.dev. The form goes through Web3Forms, a service that forwards your message to my inbox.",
+        "usage_title": "What I use it for",
+        "usage_text": "To answer you and talk about your project. I do not sell, rent or share your details with anyone for advertising.",
+        "analytics_title": "Cookies and visit data",
+        "analytics_text": "This site does not use cookies. It is hosted on Cloudflare, which may log technical details of each visit, like your IP address and browser type, to keep the site secure, running, and to count visits anonymously.",
+        "protection_title": "How I protect it",
+        "protection_text": "Your messages stay in my inbox and I take reasonable steps to protect them.",
+        "contact_title": "Contact",
+        "contact_text": "If you have questions about this policy, write to me at hello@jsalinas.dev.",
+        "back_home": "Back to home"
+    },
+    "NotFound": {
+        "title": "This page does not exist",
+        "text": "The link is broken or the page moved.",
+        "back_home": "Go to home"
     }
 }

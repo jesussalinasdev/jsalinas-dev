@@ -1,0 +1,27 @@
+---
+// Cloudflare Pages answers "/" with a real 302 from public/_redirects.
+// This page only exists for hosts that ignore that file.
+import { useTranslations } from '../i18n';
+
+const t = useTranslations('es');
+---
+
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="refresh" content="0; url=/es/" />
+        <meta name="robots" content="noindex" />
+        <link rel="canonical" href="https://jsalinas.dev/es/" />
+        <title>{t('Meta.title')}</title>
+        <script is:inline>location.replace('/es/' + location.hash);</script>
+        <style>
+            body { margin: 0; min-height: 100vh; display: grid; place-items: center; gap: 1rem; background: #0b111b; color: #f6f1e7; font: 1.1rem system-ui, sans-serif; }
+            a { color: #6aa6ff; margin: 0 0.75rem; }
+        </style>
+    </head>
+    <body>
+        <p><a href="/es/" lang="es">{t('Navbar.language_es')}</a><a href="/en/" lang="en">{t('Navbar.language_en')}</a></p>
+    </body>
+</html>

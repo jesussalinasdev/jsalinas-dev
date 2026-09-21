@@ -1,0 +1,171 @@
+---
+import Icon from './Icon.astro';
+import { demos } from '../data/demos';
+import { useTranslations, type Locale } from '../i18n';
+
+interface Props {
+    locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<section id="portfolio" class="work section" aria-labelledby="work-title">
+    <div class="wrap">
+        <header class="work__head">
+            <h2 id="work-title" class="section-title" data-arrive>{t('Portfolio.headline')}</h2>
+            <p class="work__lede" data-arrive style="--i: 1">{t('Portfolio.description')}</p>
+        </header>
+
+        <ul class="work__grid">
+            {
+                demos.map((demo, i) => {
+                    const label = t('Portfolio.slot_label', { number: i + 1 });
+                    const ready = Boolean(demo.url && demo.image);
+                    return (
+                        <li class="work__item" data-arrive style={`--i: ${i}`}>
+                            {ready ? (
+                                <a class="work__card" href={demo.url} target="_blank" rel="noopener noreferrer">
+                                    <div class="work__shot">
+                                        <img src={demo.image} alt={label} loading="lazy" decoding="async" />
+                                    </div>
+                                    <h3>{label}</h3>
+                                    <span class="work__link">
+                                        {t('Portfolio.view_demo')}
+                                        <Icon name="external" />
+                                    </span>
+                                </a>
+                            ) : (
+                                <div class="work__card work__card--soon">
+                                    <div class="work__shot work__shot--soon" aria-hidden="true">
+                                        <span class="work__ring" />
+                                        <span class="work__ring work__ring--2" />
+                                    </div>
+                                    <h3>{label}</h3>
+                                    <span class="work__link work__link--soon">{t('Portfolio.slot_soon')}</span>
+                                </div>
+                            )}
+                        </li>
+                    );
+                })
+            }
+        </ul>
+    </div>
+</section>
+
+<style>
+    .work {
+        border-top: 1px solid var(--rule);
+        background: var(--ink-0);
+    }
+
+    .work__head {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 2rem 4rem;
+        align-items: end;
+    }
+
+    .work__lede {
+        max-width: 44ch;
+        color: var(--text-2);
+        font-size: 1.15rem;
+    }
+
+    .work__grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(2.5rem, 4vw, 3.5rem) clamp(1.5rem, 2.5vw, 2.5rem);
+        margin-top: clamp(3.5rem, 7vw, 5.5rem);
+        padding: 0;
+        list-style: none;
+    }
+
+    .work__card {
+        display: block;
+        text-decoration: none;
+    }
+
+    .work__shot {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 9 / 13;
+        border-radius: 0.9rem;
+        background: var(--ink-2);
+        border: 1px solid var(--rule);
+    }
+
+    .work__shot img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+        transition: transform 0.9s var(--ease-out);
+    }
+
+    a.work__card:hover .work__shot img {
+        transform: scale(1.035);
+    }
+
+    /* Empty slot: the ripple mark waits where the example will land */
+    .work__shot--soon {
+        background: var(--ink-1);
+    }
+
+    .work__ring {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 38%;
+        aspect-ratio: 1;
+        border: 1.5px solid oklch(88% 0.165 96 / 0.5);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .work__ring--2 {
+        width: 72%;
+        border-color: oklch(60% 0.15 256 / 0.4);
+    }
+
+    .work__card h3 {
+        margin-top: 1.4rem;
+        font-size: 1.45rem;
+        font-weight: 740;
+    }
+
+    .work__link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        margin-top: 0.75rem;
+        color: var(--accent);
+        font-weight: 680;
+        font-size: 0.975rem;
+    }
+
+    a.work__card:hover .work__link {
+        text-decoration: underline;
+    }
+
+    .work__link :global(svg) {
+        width: 1.05rem;
+        height: 1.05rem;
+    }
+
+    .work__link--soon {
+        color: var(--text-3);
+    }
+
+    @media (max-width: 860px) {
+        .work__head,
+        .work__grid {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .work__shot {
+            aspect-ratio: 16 / 10;
+        }
+    }
+</style>

@@ -1,0 +1,40 @@
+---
+// One fixed field behind the page. Sections opt in with data-field and stay
+// transparent; the rest paint their own ground over it.
+---
+
+<div class="backdrop" aria-hidden="true">
+    <canvas class="backdrop__canvas"></canvas>
+</div>
+
+<style>
+    .backdrop {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        /* Shown when WebGL is unavailable, and until the first frame lands. */
+        background:
+            radial-gradient(60% 70% at 78% 45%, oklch(36% 0.1 258 / 0.6), transparent 70%),
+            radial-gradient(30% 35% at 78% 45%, oklch(88% 0.165 96 / 0.14), transparent 70%),
+            var(--ink-0);
+    }
+
+    .backdrop__canvas {
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 1.2s var(--ease-out);
+    }
+
+    .backdrop__canvas:global(.is-live) {
+        opacity: 1;
+    }
+</style>
+
+<script>
+    import { mountSignal } from '../scripts/signal';
+
+    const canvas = document.querySelector<HTMLCanvasElement>('.backdrop__canvas');
+    if (canvas) mountSignal(canvas);
+</script>

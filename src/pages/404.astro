@@ -1,0 +1,60 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import { useTranslations } from '../i18n';
+
+const es = useTranslations('es');
+const en = useTranslations('en');
+---
+
+<Base locale="es" title={es('NotFound.title')}>
+    <Nav locale="es" />
+    <main id="main" class="lost wrap">
+        <p class="lost__code" aria-hidden="true">404</p>
+        <h1>{es('NotFound.title')}</h1>
+        <p>{es('NotFound.text')}</p>
+        <a class="btn btn--primary" href="/es/">{es('NotFound.back_home')}</a>
+
+        <div class="lost__en" lang="en">
+            <h2>{en('NotFound.title')}</h2>
+            <p>{en('NotFound.text')}</p>
+            <a class="btn btn--ghost" href="/en/">{en('NotFound.back_home')}</a>
+        </div>
+    </main>
+</Base>
+
+<style>
+    .lost {
+        min-height: 100svh;
+        padding-block: 9rem 5rem;
+    }
+
+    .lost__code {
+        color: var(--accent);
+        font-size: clamp(5rem, 3rem + 10vw, 11rem);
+        font-weight: 850;
+        font-stretch: 125%;
+        line-height: 0.9;
+        letter-spacing: -0.04em;
+    }
+
+    .lost h1 {
+        margin-top: 1.5rem;
+        font-size: clamp(2rem, 1.4rem + 2.4vw, 3.25rem);
+    }
+
+    .lost p {
+        margin-block: 1rem 2rem;
+        color: var(--text-2);
+    }
+
+    .lost__en {
+        margin-top: 4rem;
+        padding-top: 2.5rem;
+        border-top: 1px solid var(--rule);
+    }
+
+    .lost__en h2 {
+        font-size: 1.6rem;
+    }
+</style>

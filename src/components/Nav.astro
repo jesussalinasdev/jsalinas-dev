@@ -1,0 +1,274 @@
+---
+import Icon from './Icon.astro';
+import { useTranslations, localePath, type Locale } from '../i18n';
+
+interface Props {
+    locale: Locale;
+    /** Path after the locale segment, used by the language switch. */
+    path?: string;
+}
+
+const { locale, path = '' } = Astro.props;
+const t = useTranslations(locale);
+const home = localePath(locale);
+const links = [
+    { href: `${home}#about`, label: t('Navbar.about') },
+    { href: `${home}#offer`, label: t('Navbar.offer') },
+    { href: `${home}#portfolio`, label: t('Navbar.portfolio') },
+];
+const other: Locale = locale === 'es' ? 'en' : 'es';
+---
+
+<header class="nav" data-nav>
+    <div class="nav__bar wrap">
+        <a class="nav__brand" href={home}>jsalinas<span>.dev</span></a>
+
+        <nav class="nav__links" aria-label={t('Navbar.nav_label')}>
+            {links.map((l) => <a href={l.href}>{l.label}</a>)}
+        </nav>
+
+        <div class="nav__actions">
+            <div class="nav__lang">
+                <span class="sr-only">{t('Navbar.language')}:</span>
+                <a href={`/es/${path}`} lang="es" aria-label={t('Navbar.language_es')} aria-current={locale === 'es' ? 'true' : undefined}>ES</a>
+                <a href={`/en/${path}`} lang="en" aria-label={t('Navbar.language_en')} aria-current={locale === 'en' ? 'true' : undefined}>EN</a>
+            </div>
+            <a class="nav__cta" href={`${home}#contact`}>{t('Navbar.contact')}</a>
+            <button
+                class="nav__toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="nav-menu"
+                data-open-label={t('Navbar.menu_toggle')}
+                data-close-label={t('Navbar.menu_close')}
+                aria-label={t('Navbar.menu_toggle')}>
+                <Icon name="menu" class="nav__icon-open" />
+                <Icon name="close" class="nav__icon-close" />
+            </button>
+        </div>
+    </div>
+
+    <div class="nav__menu" id="nav-menu" hidden>
+        <nav class="wrap" aria-label={t('Navbar.nav_label')}>
+            {links.map((l) => <a href={l.href}>{l.label}</a>)}
+            <a href={`${home}#contact`}>{t('Navbar.contact')}</a>
+            <p class="nav__menu-lang">
+                <span>{t('Navbar.language')}</span>
+                <a href={`/${other}/${path}`} lang={other}>{t(`Navbar.language_${other}`)}</a>
+            </p>
+        </nav>
+    </div>
+</header>
+
+<style>
+    .nav {
+        position: fixed;
+        inset: 0 0 auto;
+        z-index: 40;
+        transition:
+            background-color 0.35s var(--ease-out),
+            border-color 0.35s var(--ease-out);
+        border-bottom: 1px solid transparent;
+    }
+
+    .nav:global(.is-solid),
+    .nav:global(.is-open) {
+        background: var(--ink-0);
+        border-bottom-color: var(--rule);
+    }
+
+    .nav__bar {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        height: 4.5rem;
+    }
+
+    .nav__brand {
+        font-weight: 800;
+        font-stretch: 118%;
+        font-size: 1.2rem;
+        letter-spacing: -0.02em;
+        text-decoration: none;
+        margin-right: auto;
+    }
+
+    .nav__brand span {
+        color: var(--accent);
+    }
+
+    .nav__links {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .nav__links a,
+    .nav__lang a {
+        position: relative;
+        color: var(--text-2);
+        font-weight: 560;
+        font-size: 0.975rem;
+        text-decoration: none;
+        transition: color 0.2s var(--ease-out);
+    }
+
+    .nav__links a::after {
+        content: '';
+        position: absolute;
+        inset: auto 0 -0.35rem;
+        height: 2px;
+        background: var(--accent);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.35s var(--ease-out);
+    }
+
+    .nav__links a:hover,
+    .nav__lang a:hover {
+        color: var(--text);
+    }
+
+    .nav__links a:hover::after {
+        transform: scaleX(1);
+    }
+
+    .nav__actions {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+    }
+
+    .nav__lang {
+        display: flex;
+        gap: 0.75rem;
+        font-stretch: 110%;
+    }
+
+    .nav__lang a[aria-current='true'] {
+        color: var(--text);
+        text-decoration: underline;
+        text-decoration-color: var(--accent);
+        text-decoration-thickness: 2px;
+    }
+
+    .nav__cta {
+        display: inline-flex;
+        align-items: center;
+        min-height: 2.6rem;
+        padding: 0 1.15rem;
+        border-radius: var(--radius-pill);
+        border: 1.5px solid var(--accent);
+        color: var(--accent);
+        font-weight: 680;
+        font-size: 0.975rem;
+        text-decoration: none;
+        transition:
+            background-color 0.25s var(--ease-out),
+            color 0.25s var(--ease-out);
+    }
+
+    .nav__cta:hover {
+        background: var(--accent);
+        color: var(--on-accent);
+    }
+
+    .nav__toggle {
+        display: none;
+        place-items: center;
+        width: 2.75rem;
+        height: 2.75rem;
+        border: 1.5px solid var(--rule-strong);
+        border-radius: var(--radius-pill);
+        background: transparent;
+        color: var(--text);
+        cursor: pointer;
+    }
+
+    .nav__toggle :global(svg) {
+        width: 1.35rem;
+        height: 1.35rem;
+    }
+
+    .nav :global(.nav__icon-close),
+    .nav:global(.is-open) :global(.nav__icon-open) {
+        display: none;
+    }
+
+    .nav:global(.is-open) :global(.nav__icon-close) {
+        display: block;
+    }
+
+    .nav__menu {
+        border-top: 1px solid var(--rule);
+        background: var(--ink-0);
+    }
+
+    .nav__menu nav {
+        display: flex;
+        flex-direction: column;
+        padding-block: 1rem 2rem;
+    }
+
+    .nav__menu nav > a {
+        padding-block: 0.9rem;
+        border-bottom: 1px solid var(--rule);
+        font-size: 1.6rem;
+        font-weight: 760;
+        font-stretch: 116%;
+        text-decoration: none;
+    }
+
+    .nav__menu-lang {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 1.25rem;
+        color: var(--text-3);
+    }
+
+    .nav__menu-lang a {
+        color: var(--text);
+        font-weight: 650;
+    }
+
+    @media (max-width: 860px) {
+        .nav__links,
+        .nav__lang,
+        .nav__cta {
+            display: none;
+        }
+
+        .nav__toggle {
+            display: grid;
+        }
+    }
+</style>
+
+<script>
+    const nav = document.querySelector<HTMLElement>('[data-nav]');
+    if (nav) {
+        const toggle = nav.querySelector<HTMLButtonElement>('.nav__toggle')!;
+        const menu = nav.querySelector<HTMLElement>('#nav-menu')!;
+
+        const setOpen = (open: boolean) => {
+            nav.classList.toggle('is-open', open);
+            menu.hidden = !open;
+            toggle.setAttribute('aria-expanded', String(open));
+            toggle.setAttribute('aria-label', (open ? toggle.dataset.closeLabel : toggle.dataset.openLabel) ?? '');
+        };
+
+        toggle.addEventListener('click', () => setOpen(menu.hidden));
+        menu.addEventListener('click', (e) => {
+            if ((e.target as HTMLElement).closest('a')) setOpen(false);
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !menu.hidden) {
+                setOpen(false);
+                toggle.focus();
+            }
+        });
+
+        const onScroll = () => nav.classList.toggle('is-solid', scrollY > 24);
+        onScroll();
+        addEventListener('scroll', onScroll, { passive: true });
+    }
+</script>

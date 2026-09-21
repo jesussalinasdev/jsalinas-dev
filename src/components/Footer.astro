@@ -1,0 +1,73 @@
+---
+import { useTranslations, localePath, type Locale } from '../i18n';
+
+interface Props {
+    locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<footer class="footer">
+    <div class="footer__row wrap">
+        <p class="footer__brand">jsalinas<span>.dev</span></p>
+        <ul class="footer__links">
+            <li>{t('Contact.footer_name')}</li>
+            <li>{t('Contact.footer_city')}</li>
+            <li>
+                <a href="https://www.linkedin.com/in/jesus-salinas-6488b528a/" target="_blank" rel="noopener noreferrer">
+                    {t('Contact.linkedin')}
+                </a>
+            </li>
+            <li><a href={localePath(locale, 'privacy-policy/')}>{t('Contact.footer_privacy')}</a></li>
+        </ul>
+    </div>
+</footer>
+
+<style>
+    .footer {
+        border-top: 1px solid var(--rule);
+        background: var(--ink-0);
+    }
+
+    .footer__row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem 2rem;
+        padding-block: 2rem;
+    }
+
+    .footer__brand {
+        font-weight: 800;
+        font-stretch: 118%;
+        letter-spacing: -0.02em;
+    }
+
+    .footer__brand span {
+        color: var(--accent);
+    }
+
+    .footer__links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 1.75rem;
+        padding: 0;
+        list-style: none;
+        color: var(--text-3);
+        font-size: 0.95rem;
+    }
+
+    .footer__links a {
+        color: var(--text-2);
+        text-decoration-color: var(--rule-strong);
+        transition: color 0.2s var(--ease-out);
+    }
+
+    .footer__links a:hover {
+        color: var(--accent);
+        text-decoration-color: currentColor;
+    }
+</style>

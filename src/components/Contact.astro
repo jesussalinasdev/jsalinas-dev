@@ -1,0 +1,230 @@
+---
+import Icon from './Icon.astro';
+import { useTranslations, type Locale } from '../i18n';
+
+interface Props {
+    locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<section id="contact" class="contact section" aria-labelledby="contact-title" data-field data-field-origin=".contact__mail" data-field-x="0.2" data-field-y="0.7" data-field-ping="4.6" data-field-shade="0.2">
+
+    <div class="contact__grid wrap">
+        <div class="contact__copy">
+            <h2 id="contact-title" class="contact__title" data-arrive>
+                {t('Contact.headline')} <span>{t('Contact.headline_highlight')}</span>
+            </h2>
+            <p class="contact__lede" data-arrive style="--i: 1">{t('Contact.description')}</p>
+            <a class="btn btn--ghost contact__mail" href="mailto:hello@jsalinas.dev" data-arrive style="--i: 2">
+                <Icon name="mail" />
+                hello@jsalinas.dev
+            </a>
+        </div>
+
+        <form
+            class="contact__form"
+            data-contact-form
+            data-sending={t('Contact.form.sending')}
+            data-sent={t('Contact.form.sent')}
+            data-send={t('Contact.form.send')}
+            data-arrive
+            style="--i: 1">
+            <input type="checkbox" name="botcheck" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+            <label class="field">
+                <span>{t('Contact.form.name')}</span>
+                <input type="text" name="name" required autocomplete="name" placeholder={t('Contact.form.name_placeholder')} />
+            </label>
+            <label class="field">
+                <span>{t('Contact.form.email')}</span>
+                <input type="email" name="email" required autocomplete="email" placeholder={t('Contact.form.email_placeholder')} />
+            </label>
+            <label class="field">
+                <span>{t('Contact.form.message')}</span>
+                <textarea name="message" rows="5" required></textarea>
+            </label>
+
+            <div class="contact__submit">
+                <button class="btn btn--primary" type="submit">
+                    <span data-label>{t('Contact.form.send')}</span>
+                    <Icon name="arrow" />
+                </button>
+            </div>
+
+            <p class="contact__status contact__status--ok" data-status="success" hidden role="status">{t('Contact.form.success')}</p>
+            <p class="contact__status contact__status--error" data-status="error" hidden role="alert">{t('Contact.form.error')}</p>
+        </form>
+    </div>
+</section>
+
+<style>
+    .contact {
+        overflow: hidden;
+        padding-block: clamp(6rem, 13vw, 11rem);
+    }
+
+    .contact__grid {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+        gap: clamp(3rem, 6vw, 6rem);
+        align-items: center;
+        pointer-events: none;
+    }
+
+    .contact__copy,
+    .contact__form {
+        pointer-events: auto;
+    }
+
+    .contact__title {
+        font-size: clamp(2rem, 1.2rem + 3vw, 3.75rem);
+        line-height: 0.98;
+        font-weight: 820;
+    }
+
+    .contact__title span {
+        color: var(--accent);
+    }
+
+    .contact__lede {
+        max-width: 44ch;
+        margin-top: 1.75rem;
+        color: var(--text-2);
+        font-size: 1.2rem;
+    }
+
+    .contact__mail {
+        margin-top: 2.25rem;
+        background: var(--ink-0);
+    }
+
+    .contact__form {
+        display: grid;
+        gap: 1.25rem;
+        padding: clamp(1.5rem, 3vw, 2.5rem);
+        border-radius: var(--radius-panel);
+        background: var(--ink-1);
+        border: 1px solid var(--rule);
+        box-shadow: var(--lift);
+    }
+
+    .field {
+        display: grid;
+        gap: 0.5rem;
+    }
+
+    .field span {
+        font-weight: 620;
+        font-size: 0.975rem;
+    }
+
+    .field input,
+    .field textarea {
+        width: 100%;
+        padding: 0.85rem 1rem;
+        border-radius: 0.75rem;
+        border: 1.5px solid var(--rule-strong);
+        background: var(--ink-0);
+        color: var(--text);
+        font: inherit;
+        font-size: 1.0625rem;
+        resize: vertical;
+        transition:
+            border-color 0.2s var(--ease-out),
+            background-color 0.2s var(--ease-out);
+    }
+
+    .field input::placeholder {
+        color: var(--text-3);
+    }
+
+    .field input:hover,
+    .field textarea:hover {
+        border-color: oklch(100% 0 0 / 0.34);
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+        outline: none;
+        border-color: var(--accent);
+        background: var(--ink-1);
+    }
+
+    .field input:user-invalid,
+    .field textarea:user-invalid {
+        border-color: oklch(70% 0.19 25);
+    }
+
+    .contact__submit {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 0.25rem;
+    }
+
+    .contact__status {
+        padding: 0.85rem 1rem;
+        border-radius: 0.75rem;
+        font-weight: 560;
+    }
+
+    .contact__status--ok {
+        background: oklch(60% 0.15 256 / 0.25);
+        color: var(--text);
+    }
+
+    .contact__status--error {
+        background: oklch(62% 0.19 25 / 0.2);
+        color: oklch(90% 0.06 25);
+    }
+
+    @media (max-width: 900px) {
+        .contact__grid {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .contact__submit .btn {
+            width: 100%;
+        }
+    }
+</style>
+
+<script>
+    const form = document.querySelector<HTMLFormElement>('[data-contact-form]');
+
+    if (form) {
+        const button = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+        const label = button.querySelector<HTMLElement>('[data-label]')!;
+        const ok = form.querySelector<HTMLElement>('[data-status="success"]')!;
+        const fail = form.querySelector<HTMLElement>('[data-status="error"]')!;
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            ok.hidden = true;
+            fail.hidden = true;
+
+            button.disabled = true;
+            label.textContent = form.dataset.sending ?? '';
+
+            const data = new FormData(form);
+            data.append('access_key', 'fa13fa1b-cf97-49cf-88b9-bfde80669e9f');
+
+            try {
+                const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data });
+                const json = await res.json();
+                if (!json.success) throw new Error('rejected');
+                form.reset();
+                label.textContent = form.dataset.sent ?? '';
+                ok.hidden = false;
+            } catch {
+                button.disabled = false;
+                label.textContent = form.dataset.send ?? '';
+                fail.hidden = false;
+            }
+        });
+    }
+</script>

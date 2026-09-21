@@ -1,0 +1,122 @@
+---
+import Icon from './Icon.astro';
+import { useTranslations, type Locale } from '../i18n';
+
+interface Props {
+    locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const items = t.raw<{ q: string; a: string }[]>('FAQ.items');
+---
+
+<section id="faq" class="faq section" aria-labelledby="faq-title">
+    <div class="faq__grid wrap">
+        <h2 id="faq-title" class="section-title faq__title" data-arrive>{t('FAQ.title')}</h2>
+
+        <div class="faq__list">
+            {
+                items.map((item, i) => (
+                    <details class="faq__item" data-arrive style={`--i: ${Math.min(i, 4)}`}>
+                        <summary>
+                            <span>{item.q}</span>
+                            <Icon name="plus" class="faq__icon" />
+                        </summary>
+                        <div class="faq__answer">
+                            <p>{item.a}</p>
+                        </div>
+                    </details>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<style>
+    .faq {
+        background: var(--ink-0);
+    }
+
+    .faq__grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+        gap: clamp(2rem, 6vw, 6rem);
+        align-items: start;
+    }
+
+    .faq__title {
+        position: sticky;
+        top: 7rem;
+    }
+
+    .faq__list {
+        border-top: 1.5px solid var(--rule-strong);
+    }
+
+    .faq__item {
+        border-bottom: 1.5px solid var(--rule-strong);
+    }
+
+    .faq__item summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+        padding-block: 1.5rem;
+        cursor: pointer;
+        list-style: none;
+        font-size: clamp(1.15rem, 1.05rem + 0.45vw, 1.45rem);
+        font-weight: 680;
+        font-stretch: 108%;
+        line-height: 1.3;
+        transition: color 0.2s var(--ease-out);
+    }
+
+    .faq__item summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .faq__item summary:hover {
+        color: var(--accent);
+    }
+
+    .faq__item :global(.faq__icon) {
+        flex: none;
+        width: 1.6rem;
+        height: 1.6rem;
+        color: var(--accent);
+        transition: transform 0.45s var(--ease-out);
+    }
+
+    .faq__item[open] :global(.faq__icon) {
+        transform: rotate(45deg);
+    }
+
+    .faq__answer p {
+        max-width: var(--measure);
+        padding-bottom: 1.75rem;
+        color: var(--text-2);
+    }
+
+    .faq__item[open] .faq__answer {
+        animation: answer-in 0.55s var(--ease-out);
+    }
+
+    @keyframes answer-in {
+        from {
+            opacity: 0;
+            transform: translateY(-6px);
+        }
+    }
+
+    @media (max-width: 860px) {
+        .faq__grid {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .faq__title {
+            position: static;
+        }
+    }
+</style>

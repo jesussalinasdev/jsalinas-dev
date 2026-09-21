@@ -1,0 +1,98 @@
+---
+import Base from '../../layouts/Base.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import Icon from '../../components/Icon.astro';
+import { locales, useTranslations, localePath, type Locale } from '../../i18n';
+
+export function getStaticPaths() {
+    return locales.map((locale) => ({ params: { locale } }));
+}
+
+const locale = Astro.params.locale as Locale;
+const t = useTranslations(locale);
+const blocks = ['collection', 'usage', 'analytics', 'protection', 'contact'];
+---
+
+<Base locale={locale} path="privacy-policy/" title={t('PrivacyPolicy.title')}>
+    <Nav locale={locale} path="privacy-policy/" />
+    <main id="main" class="legal wrap">
+        <a class="legal__back" href={localePath(locale)}>
+            <Icon name="arrow" />
+            {t('PrivacyPolicy.back_home')}
+        </a>
+        <h1 class="legal__title">{t('PrivacyPolicy.title')}</h1>
+        <p class="legal__updated">{t('PrivacyPolicy.last_updated')}</p>
+        <p class="legal__intro">{t('PrivacyPolicy.intro')}</p>
+
+        {
+            blocks.map((key) => (
+                <section class="legal__block">
+                    <h2>{t(`PrivacyPolicy.${key}_title`)}</h2>
+                    <p>{t(`PrivacyPolicy.${key}_text`)}</p>
+                </section>
+            ))
+        }
+    </main>
+    <Footer locale={locale} />
+</Base>
+
+<style>
+    .legal {
+        max-width: 52rem;
+        padding-block: 9rem 7rem;
+    }
+
+    .legal__back {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--accent);
+        font-weight: 650;
+        text-decoration: none;
+    }
+
+    .legal__back:hover {
+        text-decoration: underline;
+    }
+
+    .legal__back :global(svg) {
+        width: 1.1rem;
+        height: 1.1rem;
+        transform: rotate(180deg);
+    }
+
+    .legal__title {
+        margin-top: 2.5rem;
+        font-size: clamp(2.4rem, 1.6rem + 3vw, 4rem);
+    }
+
+    .legal__updated {
+        margin-top: 1rem;
+        color: var(--text-3);
+        font-size: 0.95rem;
+    }
+
+    .legal__intro {
+        max-width: var(--measure);
+        margin-top: 2.5rem;
+        font-size: 1.2rem;
+    }
+
+    .legal__block {
+        max-width: var(--measure);
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--rule);
+    }
+
+    .legal__block h2 {
+        font-size: 1.5rem;
+        font-weight: 740;
+    }
+
+    .legal__block p {
+        margin-top: 1rem;
+        color: var(--text-2);
+    }
+</style>

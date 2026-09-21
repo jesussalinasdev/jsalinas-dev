@@ -1,11 +1,20 @@
 {
+    "Meta": {
+        "title": "Página web con WhatsApp para tu negocio | Jesús Salinas",
+        "description": "A qué te dedicas, dónde trabajas y cómo escribirte por WhatsApp, en una página. Precio desde 499 USD, sin sorpresas, y queda a tu nombre. Atención en español."
+    },
     "Navbar": {
         "about": "Sobre mí",
         "offer": "Oferta",
         "portfolio": "Trabajos",
         "contact": "Contacto",
         "language": "Idioma",
-        "menu_toggle": "Abrir menú"
+        "menu_toggle": "Abrir menú",
+        "skip_link": "Saltar al contenido",
+        "nav_label": "Principal",
+        "language_es": "Español",
+        "language_en": "English",
+        "menu_close": "Cerrar menú"
     },
     "Hero": {
         "badge": "Disponible para nuevos proyectos",
@@ -13,7 +22,22 @@
         "headline_highlight": "y te escriban a tu WhatsApp.",
         "subheadline": "Construcción, limpieza, plomería o jardinería, en Canadá o Estados Unidos. Precio desde 499 USD, mitad al empezar, y la página queda a tu nombre.",
         "cta_primary": "Escríbeme",
-        "cta_secondary": "Ver precios"
+        "cta_secondary": "Ver precios",
+        "example_label": "Ejemplo",
+        "example_messages": [
+            "Hola, vi tu página. ¿Hacen remodelación de baños en Surrey?",
+            "Buenas, ¿cuánto cobran por limpiar una casa de tres cuartos en Burnaby?",
+            "Tengo una fuga debajo del fregadero. ¿Pueden venir hoy?",
+            "¿Hacen mantenimiento de jardín cada semana en Richmond?",
+            "Hola, necesito presupuesto para pintar el exterior de mi casa.",
+            "¿Trabajan los sábados? Quiero cambiar el piso de la cocina.",
+            "Me pasaron su número. ¿Hacen limpieza después de una obra?",
+            "¿Instalan calentadores de agua? El mío dejó de funcionar.",
+            "Buenas tardes, ¿cortan pasto y podan árboles en Coquitlam?",
+            "Vi las fotos de sus trabajos. ¿Me pueden mandar un presupuesto?"
+        ],
+        "example_status": "Nuevo mensaje",
+        "chat_title": "Tu negocio"
     },
     "About": {
         "title": "Sobre mí",
@@ -36,8 +60,8 @@
                 "desc": "Tu página lleva un botón que abre tu chat al instante. El mensaje llega a tu teléfono y tú atiendes a tu cliente. Yo no me meto en tus conversaciones."
             },
             "ownership": {
-                "title": "La página es tuya.",
-                "desc": "Queda a tu nombre y en tus cuentas."
+                "title": "Las llaves son tuyas.",
+                "desc": "El dominio y el hosting quedan a tu nombre, en tus cuentas. Al terminar te entrego todas las credenciales, así que puedes cambiarla o ampliarla cuando quieras, sin depender de mí."
             }
         }
     },
@@ -112,41 +136,12 @@
         ]
     },
     "Portfolio": {
-        "title": "Portafolio",
-        "headline": "Trabajos Seleccionados",
-        "description": "Una mezcla de aplicaciones web complejas y sitios de marketing de alto impacto.",
-        "private_access": "Acceso Privado",
-        "visit_site": "Visitar Sitio",
-        "projects": {
-            "below_zero_app": {
-                "title": "Below Zero App",
-                "description": "Plataforma SaaS integral para equipos científicos de refrigeración. Incluye programación en tiempo real, seguimiento de activos por código QR y facturación automatizada para operaciones optimizadas."
-            },
-            "below_zero_site": {
-                "title": "below-zero.ca",
-                "description": "Sitio corporativo para líder en instalación y reparación de equipos científicos de refrigeración. Enfocado en SEO, generación de leads y velocidad de carga extrema."
-            },
-            "cynthia": {
-                "title": "cynthiamedrano.ca",
-                "description": "Portafolio de servicios profesionales para consultora fiscal. Presenta un diseño limpio y multilingüe con sistema de reservas integrado para agilizar citas y consultas de clientes."
-            },
-            "giuseppe_febres": {
-                "title": "Giuseppe Febres Portfolio",
-                "description": "Portafolio profesional para un marketer digital especializado en campañas basadas en datos y narrativa de marca."
-            },
-            "locky": {
-                "title": "Locky Password Manager",
-                "description": "Gestor de contraseñas seguro construido con Next.js y Supabase. Cuenta con bóvedas de credenciales, capacidades de equipo compartido y encriptación de grado militar."
-            },
-            "cynthia_tracker": {
-                "title": "Rastreador de Declaraciones",
-                "description": "Sistema dedicado para rastrear el estado de declaraciones de impuestos. Los clientes consultan su estado en tiempo real, mejorando la transparencia."
-            },
-            "cynthia_clients": {
-                "title": "Gestión de Clientes y Procesos",
-                "description": "CRM interno para administrar carteras de clientes y flujos de trabajo fiscales. Incluye actualizaciones automáticas, centralización de documentos y comunicación segura."
-            }
-        }
+        "title": "Trabajos",
+        "headline": "Así se vería la tuya.",
+        "description": "Tres páginas de ejemplo, hechas con la misma plantilla que uso para tu negocio.",
+        "slot_label": "Ejemplo {number}",
+        "slot_soon": "Próximamente",
+        "view_demo": "Ver el ejemplo"
     },
     "Contact": {
         "title": "Contacto",
@@ -171,18 +166,24 @@
         }
     },
     "PrivacyPolicy": {
-        "title": "Política de Privacidad",
-        "last_updated": "Última Actualización: Diciembre 2025",
-        "intro": "En jsalinas.dev, respeto tu privacidad y estoy comprometido a proteger la información personal que compartes conmigo.",
-        "collection_title": "Recopilación de Información",
-        "collection_text": "Recopilo la información que proporcionas voluntariamente al contactarme directamente por correo electrónico o en futuros formularios, incluyendo tu nombre, dirección de correo electrónico y el contenido del mensaje.",
-        "usage_title": "Uso de la Información",
-        "usage_text": "La información recopilada se utiliza únicamente para responder a tus consultas y discutir proyectos potenciales. No vendo, intercambio ni transfiero tu información personal a terceros.",
-        "analytics_title": "Cookies y Analíticas",
-        "analytics_text": "Este sitio web utiliza herramientas de analítica básicas (como Vercel Web Analytics) para monitorear el tráfico y mejorar el rendimiento. Estas herramientas pueden recopilar datos de uso anónimos. No utilizo rastreo intrusivo ni vendo estos datos.",
-        "protection_title": "Protección de Datos",
-        "protection_text": "Implemento medidas de seguridad razonables para mantener la seguridad de tu información personal.",
+        "title": "Política de privacidad",
+        "last_updated": "Última actualización: septiembre de 2026",
+        "intro": "Cuido la información que me compartes. Aquí te explico qué datos recibo, para qué los uso y quién más los procesa.",
+        "collection_title": "Qué información recibo",
+        "collection_text": "Solo la que tú me envías: tu nombre, tu correo y tu mensaje, cuando me escribes por el formulario de esta página o a hello@jsalinas.dev. El formulario se envía a través de Web3Forms, un servicio que me reenvía tu mensaje por correo.",
+        "usage_title": "Para qué la uso",
+        "usage_text": "Para responderte y hablar de tu proyecto. No vendo, no alquilo ni comparto tus datos con nadie para publicidad.",
+        "analytics_title": "Cookies y datos de visita",
+        "analytics_text": "Esta página no usa cookies. El sitio está alojado en Cloudflare, que puede registrar datos técnicos de cada visita, como la dirección IP y el tipo de navegador, para protegerlo, mantenerlo funcionando y contar visitas de forma anónima.",
+        "protection_title": "Cómo la protejo",
+        "protection_text": "Tus mensajes quedan en mi correo y tomo medidas razonables para protegerlos.",
         "contact_title": "Contacto",
-        "contact_text": "Si tienes alguna pregunta sobre esta Política de Privacidad, por favor contáctame en hello@jsalinas.dev."
+        "contact_text": "Si tienes preguntas sobre esta política, escríbeme a hello@jsalinas.dev.",
+        "back_home": "Volver al inicio"
+    },
+    "NotFound": {
+        "title": "Esta página no existe",
+        "text": "El enlace está roto o la página se movió.",
+        "back_home": "Ir al inicio"
     }
 }

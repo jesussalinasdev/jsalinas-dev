@@ -1,0 +1,119 @@
+---
+import { useTranslations, type Locale } from '../i18n';
+
+interface Props {
+    locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<section id="about" class="about section" aria-labelledby="about-title">
+    <div class="about__grid wrap">
+        <div class="about__photo" data-arrive>
+            <img
+                src="/jesus-bw.webp"
+                alt={t('Contact.footer_name')}
+                width="1024"
+                height="1024"
+                loading="lazy"
+                decoding="async"
+            />
+            <span class="about__ring" aria-hidden="true"></span>
+            <span class="about__ring about__ring--2" aria-hidden="true"></span>
+        </div>
+
+        <div class="about__copy">
+            <h2 id="about-title" class="section-title about__title" data-arrive>
+                {t('About.headline_prefix')} <span>{t('About.headline_highlight')}</span>
+            </h2>
+            <p class="about__lede" data-arrive style="--i: 1">{t('About.p1')}</p>
+            <p class="about__text" data-arrive style="--i: 2">{t('About.p2')}</p>
+        </div>
+    </div>
+</section>
+
+<style>
+    .about {
+        border-top: 1px solid var(--rule);
+        background: var(--ink-0);
+        overflow: clip;
+    }
+
+    .about__grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+        gap: clamp(2.5rem, 6vw, 6rem);
+        align-items: center;
+    }
+
+    .about__photo {
+        position: relative;
+        isolation: isolate;
+        aspect-ratio: 4 / 5;
+        max-width: 30rem;
+        width: 100%;
+    }
+
+    .about__photo img {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: var(--radius-panel);
+        filter: grayscale(1) contrast(1.05);
+        transition: filter 0.8s var(--ease-out);
+    }
+
+    .about__photo:hover img {
+        filter: grayscale(0.2) contrast(1.02);
+    }
+
+    /* Two signal rings echo the field behind the portrait */
+    .about__ring {
+        position: absolute;
+        z-index: 0;
+        left: 50%;
+        top: 50%;
+        width: 118%;
+        aspect-ratio: 1;
+        border: 1.5px solid oklch(88% 0.165 96 / 0.45);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .about__ring--2 {
+        width: 150%;
+        border-color: oklch(60% 0.15 256 / 0.35);
+    }
+
+    .about__title span {
+        color: var(--accent);
+    }
+
+    .about__lede {
+        max-width: var(--measure);
+        margin-top: 2.25rem;
+        font-size: clamp(1.15rem, 1.05rem + 0.4vw, 1.35rem);
+        line-height: 1.55;
+    }
+
+    .about__text {
+        max-width: var(--measure);
+        margin-top: 1.25rem;
+        color: var(--text-2);
+    }
+
+    @media (max-width: 860px) {
+        .about__grid {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .about__photo {
+            max-width: 22rem;
+            margin-inline: auto;
+        }
+    }
+</style>

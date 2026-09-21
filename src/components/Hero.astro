@@ -1,0 +1,441 @@
+---
+import Icon from './Icon.astro';
+import { useTranslations, type Locale } from '../i18n';
+
+interface Props {
+    locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const messages = t.raw<string[]>('Hero.example_messages');
+const VISIBLE = 5;
+---
+
+<section class="hero" aria-labelledby="hero-title" data-field data-field-shade="0.22">
+
+    <div class="hero__inner wrap">
+        <div class="hero__copy">
+            <h1 id="hero-title" class="hero__title" data-arrive>
+                {t('Hero.headline_prefix')} <span>{t('Hero.headline_highlight')}</span>
+            </h1>
+            <p class="hero__sub" data-arrive style="--i: 1">{t('Hero.subheadline')}</p>
+            <div class="hero__actions" data-arrive style="--i: 2">
+                <a class="btn btn--primary" href="#contact">
+                    {t('Hero.cta_primary')}
+                    <Icon name="arrow" />
+                </a>
+                <a class="btn btn--ghost" href="#offer">{t('Hero.cta_secondary')}</a>
+            </div>
+            <p class="hero__status" data-arrive style="--i: 3">
+                <span class="hero__dot" aria-hidden="true"></span>
+                {t('Hero.badge')}
+            </p>
+        </div>
+
+        <figure class="chat phone" data-chat data-messages={JSON.stringify(messages)} data-new={t('Hero.example_status')}>
+            <figcaption class="phone__bar">
+                <span class="phone__avatar" aria-hidden="true"><Icon name="tool" /></span>
+                <span class="phone__name">{t('Hero.chat_title')}</span>
+                <span class="phone__tag">{t('Hero.example_label')}</span>
+            </figcaption>
+            <ol class="chat__list">
+                {
+                    messages.slice(0, VISIBLE).map((text, i) => (
+                        <li class:list={['chat__msg', { 'is-new': i === VISIBLE - 1 }]} data-new={t('Hero.example_status')}>
+                            {text}
+                        </li>
+                    ))
+                }
+            </ol>
+            <div class="phone__composer" aria-hidden="true">
+                <span class="phone__input"></span>
+                <span class="phone__send"><Icon name="send" /></span>
+            </div>
+        </figure>
+    </div>
+</section>
+
+<style>
+    .hero {
+        position: relative;
+        isolation: isolate;
+        display: flex;
+        align-items: center;
+        min-height: 100svh;
+        padding-block: 7rem 4.5rem;
+        overflow: hidden;
+    }
+
+    .hero__inner {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+        align-items: center;
+        gap: 3rem;
+        pointer-events: none;
+    }
+
+    .hero__copy {
+        max-width: 50rem;
+        pointer-events: auto;
+    }
+
+    .hero__status {
+        display: flex;
+        align-items: center;
+        gap: 0.65rem;
+        margin-top: 1.5rem;
+        color: var(--text-2);
+        font-size: 0.95rem;
+        font-weight: 560;
+    }
+
+    .hero__dot {
+        position: relative;
+        flex: none;
+        width: 0.55rem;
+        height: 0.55rem;
+        border-radius: 50%;
+        background: var(--signal);
+    }
+
+    .hero__dot::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        border: 1.5px solid var(--signal);
+        animation: dot-ping 2.4s var(--ease-out) 3;
+        opacity: 0;
+    }
+
+    @keyframes dot-ping {
+        from {
+            transform: scale(1);
+            opacity: 0.9;
+        }
+        to {
+            transform: scale(3.2);
+            opacity: 0;
+        }
+    }
+
+    .hero__title {
+        font-size: clamp(2.5rem, 1.4rem + 3.8vw, 4.6rem);
+        line-height: 0.98;
+        letter-spacing: -0.028em;
+        font-stretch: 116%;
+        font-weight: 800;
+    }
+
+    .hero__title span {
+        color: var(--accent);
+    }
+
+    .hero__sub {
+        max-width: 38rem;
+        margin-top: 1.75rem;
+        color: var(--text-2);
+        font-size: clamp(1.075rem, 1rem + 0.35vw, 1.3rem);
+        line-height: 1.55;
+    }
+
+    .hero__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.85rem;
+        margin-top: 2.5rem;
+    }
+
+    /* A phone holding the incoming messages: five on screen, the oldest swipes out */
+    .phone {
+        justify-self: end;
+        display: flex;
+        flex-direction: column;
+        width: min(100%, 23rem);
+        margin: 0;
+        padding: 0.55rem;
+        border-radius: 2.6rem;
+        background: var(--ink-2);
+        border: 1px solid var(--rule-strong);
+        box-shadow: var(--lift);
+        pointer-events: auto;
+    }
+
+    .phone__bar {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        padding: 0.85rem 1rem 0.8rem;
+        border-radius: 2.1rem 2.1rem 0 0;
+        background: var(--ink-1);
+        border-bottom: 1px solid var(--rule);
+    }
+
+    .phone__avatar {
+        display: grid;
+        place-items: center;
+        flex: none;
+        width: 2.25rem;
+        height: 2.25rem;
+        border-radius: 50%;
+        background: var(--accent);
+        color: var(--on-accent);
+    }
+
+    .phone__avatar :global(svg) {
+        width: 1.15rem;
+        height: 1.15rem;
+    }
+
+    .phone__name {
+        margin-right: auto;
+        font-weight: 680;
+        font-stretch: 108%;
+    }
+
+    .phone__tag {
+        padding: 0.1rem 0.55rem;
+        border-radius: var(--radius-pill);
+        border: 1px solid var(--rule-strong);
+        color: var(--text-3);
+        font-size: 0.72rem;
+        font-weight: 600;
+    }
+
+    .chat__list {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: 0.6rem;
+        height: 25rem;
+        margin: 0;
+        padding: 1rem 0.9rem 0.8rem 1.4rem;
+        list-style: none;
+        overflow: hidden;
+        background-color: var(--ink-0);
+        background-image: radial-gradient(oklch(100% 0 0 / 0.045) 1px, transparent 1.2px);
+        background-size: 14px 14px;
+        mask-image: linear-gradient(to bottom, transparent, #000 2rem);
+    }
+
+    .phone__composer {
+        display: flex;
+        align-items: center;
+        gap: 0.55rem;
+        padding: 0.65rem 0.8rem 0.8rem;
+        border-radius: 0 0 2.1rem 2.1rem;
+        background: var(--ink-0);
+        border-top: 1px solid var(--rule);
+    }
+
+    .phone__input {
+        flex: 1;
+        height: 2.3rem;
+        border-radius: var(--radius-pill);
+        background: var(--ink-1);
+        border: 1px solid var(--rule);
+    }
+
+    .phone__send {
+        display: grid;
+        place-items: center;
+        flex: none;
+        width: 2.3rem;
+        height: 2.3rem;
+        border-radius: 50%;
+        background: var(--accent);
+        color: var(--on-accent);
+    }
+
+    .phone__send :global(svg) {
+        width: 1.05rem;
+        height: 1.05rem;
+    }
+
+    .chat__list :global(.chat__msg) {
+        position: relative;
+        flex: none;
+        width: fit-content;
+        max-width: 90%;
+        padding: 0.65rem 0.9rem;
+        border-radius: 1.2rem 1.2rem 1.2rem 0.35rem;
+        background: var(--ink-2);
+        border: 1px solid var(--rule);
+        font-size: 0.975rem;
+        line-height: 1.4;
+        transition:
+            border-color 0.4s var(--ease-out),
+            background-color 0.4s var(--ease-out);
+    }
+
+    .chat__list :global(.chat__msg)::before {
+        content: '';
+        position: absolute;
+        left: -0.5rem;
+        bottom: -1px;
+        width: 1rem;
+        height: 1rem;
+        background: inherit;
+        border-left: 1px solid var(--rule);
+        border-bottom: 1px solid var(--rule);
+        clip-path: polygon(100% 0, 100% 100%, 0 100%);
+    }
+
+    .chat__list :global(.chat__msg.is-new) {
+        border-color: oklch(71% 0.15 252 / 0.55);
+    }
+
+    .chat__list :global(.chat__msg.is-new)::after {
+        content: attr(data-new);
+        display: block;
+        order: -1;
+        margin-bottom: 0.2rem;
+        color: var(--accent);
+        font-size: 0.8rem;
+        font-weight: 680;
+        font-stretch: 110%;
+    }
+
+    .chat__list :global(.chat__msg.is-new) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Two columns get tight between tablet and laptop: ease the display size */
+    @media (min-width: 901px) and (max-width: 1200px) {
+        .hero__title {
+            font-size: clamp(2.5rem, 0.9rem + 3.4vw, 3.8rem);
+        }
+
+        .hero__inner {
+            gap: 2rem;
+        }
+    }
+
+    @media (max-width: 900px) {
+        .hero {
+            align-items: flex-end;
+            padding-block: 6.5rem 3rem;
+        }
+
+        .hero__inner {
+            grid-template-columns: minmax(0, 1fr);
+            gap: 2.5rem;
+        }
+
+        .phone {
+            justify-self: center;
+        }
+
+        .chat__list {
+            height: 24rem;
+        }
+
+        .chat__list :global(.chat__msg) {
+            font-size: 0.94rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .hero__title {
+            font-stretch: 104%;
+        }
+
+        .hero__actions .btn {
+            flex: 1 1 100%;
+        }
+    }
+</style>
+
+<script>
+    const chat = document.querySelector<HTMLElement>('[data-chat]');
+    const hero = chat?.closest('section');
+    const motion = document.documentElement.classList.contains('motion');
+
+    if (chat && hero && motion) {
+        const list = chat.querySelector<HTMLOListElement>('.chat__list')!;
+        const messages: string[] = JSON.parse(chat.dataset.messages ?? '[]');
+        const label = chat.dataset.new ?? '';
+        const VISIBLE = 5;
+        const EVERY = 2600;
+        const ease = 'cubic-bezier(0.16, 1, 0.3, 1)';
+
+        let next = 0;
+        let timer = 0;
+        let running = false;
+        let busy = false;
+
+        const make = (text: string) => {
+            const li = document.createElement('li');
+            li.className = 'chat__msg is-new';
+            li.dataset.new = label;
+            li.textContent = text;
+            return li;
+        };
+
+        // FLIP: animate the survivors from where they were to where they are.
+        const flip = (items: HTMLElement[], before: Map<HTMLElement, number>) => {
+            for (const el of items) {
+                const dy = (before.get(el) ?? 0) - el.getBoundingClientRect().top;
+                if (dy) el.animate([{ transform: `translateY(${dy}px)` }, { transform: 'none' }], { duration: 520, easing: ease });
+            }
+        };
+
+        async function push() {
+            if (busy) return;
+            busy = true;
+            const current = [...list.children] as HTMLElement[];
+            current.forEach((el) => el.classList.remove('is-new'));
+
+            if (current.length >= VISIBLE) {
+                const oldest = current[0];
+                await oldest.animate(
+                    [{ transform: 'none', opacity: 1 }, { transform: 'translateX(-115%)', opacity: 0 }],
+                    { duration: 420, easing: 'cubic-bezier(0.55, 0, 0.8, 0.3)', fill: 'forwards' },
+                ).finished;
+                oldest.remove();
+            }
+
+            const survivors = [...list.children] as HTMLElement[];
+            const before = new Map(survivors.map((el) => [el, el.getBoundingClientRect().top]));
+            const msg = make(messages[next]);
+            next = (next + 1) % messages.length;
+            list.append(msg);
+            flip(survivors, before);
+            msg.animate(
+                [
+                    { transform: 'translateY(18px) scale(0.94)', opacity: 0, filter: 'blur(6px)' },
+                    { transform: 'none', opacity: 1, filter: 'none' },
+                ],
+                { duration: 620, easing: ease },
+            );
+            msg.dispatchEvent(new CustomEvent('signal:request', { bubbles: true, detail: { el: msg } }));
+            busy = false;
+        }
+
+        const start = () => {
+            if (running) return;
+            running = true;
+            timer = window.setInterval(push, EVERY);
+        };
+        const stop = () => {
+            running = false;
+            window.clearInterval(timer);
+        };
+
+        // Start empty and build up to five.
+        list.replaceChildren();
+        window.setTimeout(push, 600);
+
+        let inView = false;
+        const sync = () => (inView && !document.hidden ? start() : stop());
+        new IntersectionObserver(([entry]) => {
+            inView = entry.isIntersecting;
+            sync();
+        }).observe(hero);
+        document.addEventListener('visibilitychange', sync);
+    }
+</script>

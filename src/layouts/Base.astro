@@ -1,0 +1,53 @@
+---
+import '../styles/global.css';
+import { useTranslations, locales, type Locale } from '../i18n';
+
+interface Props {
+    locale: Locale;
+    /** Path after the locale segment, e.g. "" or "privacy-policy/". */
+    path?: string;
+    title?: string;
+}
+
+const { locale, path = '', title } = Astro.props;
+const t = useTranslations(locale);
+const site = Astro.site!.origin;
+const pageTitle = title ? `${title} | Jesús Salinas` : t('Meta.title');
+const description = t('Meta.description');
+const canonical = `${site}/${locale}/${path}`;
+---
+
+<!doctype html>
+<html lang={locale}>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{pageTitle}</title>
+        <meta name="description" content={description} />
+        <link rel="canonical" href={canonical} />
+        {locales.map((l) => <link rel="alternate" hreflang={l} href={`${site}/${l}/${path}`} />)}
+        <link rel="alternate" hreflang="x-default" href={`${site}/es/${path}`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={canonical} />
+        <meta property="og:locale" content={locale === 'es' ? 'es_419' : 'en_CA'} />
+        <meta name="theme-color" content="#0b111b" />
+        <meta name="impact-site-verification" content="a04a30ef-37e0-4a75-882b-855c1e826fcd" />
+        <link rel="icon" type="image/png" href="/jsalinas-favicon.png" />
+        <script is:inline>
+            (() => {
+                const quiet = matchMedia('(prefers-reduced-motion: reduce)').matches;
+                if (!quiet && 'IntersectionObserver' in window) document.documentElement.classList.add('motion');
+            })();
+        </script>
+    </head>
+    <body>
+        <a class="skip-link" href="#main">{t('Navbar.skip_link')}</a>
+        <slot />
+        <script>
+            import { arrive } from '../scripts/arrive';
+            arrive();
+        </script>
+    </body>
+</html>

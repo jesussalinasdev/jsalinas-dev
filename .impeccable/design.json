@@ -1,0 +1,561 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-21T18:50:38.009Z",
+  "title": "Design System: jsalinas.dev",
+  "extensions": {
+    "colorMeta": {
+      "ink-0": {
+        "role": "neutral",
+        "displayName": "Night Ink",
+        "canonical": "oklch(15.5% 0.028 248)",
+        "tonalRamp": [
+          "oklch(15.5% 0.028 248)",
+          "oklch(19.5% 0.032 248)",
+          "oklch(25% 0.036 246)",
+          "oklch(33% 0.04 244)",
+          "oklch(45% 0.04 244)",
+          "oklch(60% 0.035 244)",
+          "oklch(78% 0.025 244)",
+          "oklch(94% 0.012 244)"
+        ],
+        "shaderHex": "#0b111b"
+      },
+      "ink-1": {
+        "role": "neutral",
+        "displayName": "Raised Ink",
+        "canonical": "oklch(19.5% 0.032 248)",
+        "tonalRamp": [
+          "oklch(15.5% 0.028 248)",
+          "oklch(19.5% 0.032 248)",
+          "oklch(25% 0.036 246)",
+          "oklch(33% 0.04 244)",
+          "oklch(45% 0.04 244)",
+          "oklch(60% 0.035 244)",
+          "oklch(78% 0.025 244)",
+          "oklch(94% 0.012 244)"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Well Ink",
+        "canonical": "oklch(25% 0.036 246)",
+        "tonalRamp": [
+          "oklch(15.5% 0.028 248)",
+          "oklch(19.5% 0.032 248)",
+          "oklch(25% 0.036 246)",
+          "oklch(33% 0.04 244)",
+          "oklch(45% 0.04 244)",
+          "oklch(60% 0.035 244)",
+          "oklch(78% 0.025 244)",
+          "oklch(94% 0.012 244)"
+        ]
+      },
+      "ink-3": {
+        "role": "neutral",
+        "displayName": "Scroll Ink",
+        "canonical": "oklch(33% 0.04 244)",
+        "tonalRamp": [
+          "oklch(15.5% 0.028 248)",
+          "oklch(19.5% 0.032 248)",
+          "oklch(25% 0.036 246)",
+          "oklch(33% 0.04 244)",
+          "oklch(45% 0.04 244)",
+          "oklch(60% 0.035 244)",
+          "oklch(78% 0.025 244)",
+          "oklch(94% 0.012 244)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "oklch(100% 0 0 / 0.11)",
+        "tonalRamp": [
+          "oklch(100% 0 0 / 0.04)",
+          "oklch(100% 0 0 / 0.08)",
+          "oklch(100% 0 0 / 0.11)",
+          "oklch(100% 0 0 / 0.16)",
+          "oklch(100% 0 0 / 0.22)",
+          "oklch(100% 0 0 / 0.34)",
+          "oklch(100% 0 0 / 0.5)",
+          "oklch(100% 0 0 / 0.7)"
+        ]
+      },
+      "rule-strong": {
+        "role": "neutral",
+        "displayName": "Strong Hairline",
+        "canonical": "oklch(100% 0 0 / 0.22)",
+        "tonalRamp": [
+          "oklch(100% 0 0 / 0.04)",
+          "oklch(100% 0 0 / 0.08)",
+          "oklch(100% 0 0 / 0.11)",
+          "oklch(100% 0 0 / 0.16)",
+          "oklch(100% 0 0 / 0.22)",
+          "oklch(100% 0 0 / 0.34)",
+          "oklch(100% 0 0 / 0.5)",
+          "oklch(100% 0 0 / 0.7)"
+        ]
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "Warm White",
+        "canonical": "oklch(96% 0.012 85)",
+        "tonalRamp": [
+          "oklch(15% 0.012 85)",
+          "oklch(27% 0.012 85)",
+          "oklch(39% 0.012 85)",
+          "oklch(51% 0.012 85)",
+          "oklch(63% 0.012 85)",
+          "oklch(75% 0.012 85)",
+          "oklch(87% 0.012 85)",
+          "oklch(96% 0.012 85)"
+        ]
+      },
+      "text-2": {
+        "role": "neutral",
+        "displayName": "Mist",
+        "canonical": "oklch(80% 0.022 240)",
+        "tonalRamp": [
+          "oklch(15% 0.022 240)",
+          "oklch(27% 0.022 240)",
+          "oklch(39% 0.022 240)",
+          "oklch(51% 0.022 240)",
+          "oklch(63% 0.022 240)",
+          "oklch(72% 0.022 240)",
+          "oklch(80% 0.022 240)",
+          "oklch(94% 0.022 240)"
+        ]
+      },
+      "text-3": {
+        "role": "neutral",
+        "displayName": "Fog",
+        "canonical": "oklch(68% 0.026 240)",
+        "tonalRamp": [
+          "oklch(15% 0.026 240)",
+          "oklch(27% 0.026 240)",
+          "oklch(39% 0.026 240)",
+          "oklch(51% 0.026 240)",
+          "oklch(60% 0.026 240)",
+          "oklch(68% 0.026 240)",
+          "oklch(82% 0.026 240)",
+          "oklch(94% 0.026 240)"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Cobalt",
+        "canonical": "oklch(71% 0.15 252)",
+        "tonalRamp": [
+          "oklch(17% 0.045 258)",
+          "oklch(27% 0.07 258)",
+          "oklch(40% 0.11 256)",
+          "oklch(52% 0.14 254)",
+          "oklch(60% 0.15 256)",
+          "oklch(71% 0.15 252)",
+          "oklch(77% 0.125 248)",
+          "oklch(93% 0.04 250)"
+        ]
+      },
+      "accent-hot": {
+        "role": "primary",
+        "displayName": "Cobalt Hot",
+        "canonical": "oklch(77% 0.125 248)",
+        "tonalRamp": [
+          "oklch(17% 0.045 258)",
+          "oklch(27% 0.07 258)",
+          "oklch(40% 0.11 256)",
+          "oklch(52% 0.14 254)",
+          "oklch(60% 0.15 256)",
+          "oklch(71% 0.15 252)",
+          "oklch(77% 0.125 248)",
+          "oklch(93% 0.04 250)"
+        ]
+      },
+      "on-accent": {
+        "role": "primary",
+        "displayName": "Cobalt Ink",
+        "canonical": "oklch(17% 0.045 258)",
+        "tonalRamp": [
+          "oklch(17% 0.045 258)",
+          "oklch(27% 0.07 258)",
+          "oklch(40% 0.11 256)",
+          "oklch(52% 0.14 254)",
+          "oklch(60% 0.15 256)",
+          "oklch(71% 0.15 252)",
+          "oklch(77% 0.125 248)",
+          "oklch(93% 0.04 250)"
+        ]
+      },
+      "on-accent-2": {
+        "role": "primary",
+        "displayName": "Cobalt Ink Soft",
+        "canonical": "oklch(27% 0.07 258)",
+        "tonalRamp": [
+          "oklch(17% 0.045 258)",
+          "oklch(27% 0.07 258)",
+          "oklch(40% 0.11 256)",
+          "oklch(52% 0.14 254)",
+          "oklch(60% 0.15 256)",
+          "oklch(71% 0.15 252)",
+          "oklch(77% 0.125 248)",
+          "oklch(93% 0.04 250)"
+        ]
+      },
+      "signal": {
+        "role": "secondary",
+        "displayName": "Hi-Vis Signal",
+        "canonical": "oklch(88% 0.165 96)",
+        "shaderHex": "#ffd23f",
+        "tonalRamp": [
+          "oklch(18% 0.04 96)",
+          "oklch(30% 0.07 96)",
+          "oklch(42% 0.1 96)",
+          "oklch(54% 0.12 96)",
+          "oklch(66% 0.14 96)",
+          "oklch(78% 0.16 96)",
+          "oklch(88% 0.165 96)",
+          "oklch(96% 0.07 96)"
+        ]
+      },
+      "field": {
+        "role": "secondary",
+        "displayName": "Field Blue",
+        "canonical": "oklch(60% 0.15 256)",
+        "shaderHex": "#3a72e8",
+        "tonalRamp": [
+          "oklch(17% 0.045 258)",
+          "oklch(27% 0.07 258)",
+          "oklch(40% 0.11 256)",
+          "oklch(52% 0.14 254)",
+          "oklch(60% 0.15 256)",
+          "oklch(71% 0.15 252)",
+          "oklch(77% 0.125 248)",
+          "oklch(93% 0.04 250)"
+        ]
+      },
+      "error": {
+        "role": "neutral",
+        "displayName": "Alarm",
+        "canonical": "oklch(70% 0.19 25)",
+        "tonalRamp": [
+          "oklch(18% 0.06 25)",
+          "oklch(30% 0.1 25)",
+          "oklch(42% 0.15 25)",
+          "oklch(54% 0.18 25)",
+          "oklch(62% 0.19 25)",
+          "oklch(70% 0.19 25)",
+          "oklch(82% 0.1 25)",
+          "oklch(90% 0.06 25)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero h1 only. Width 116%, narrowing to 104% at 480px and below."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Every section h2; the visible h2 is the section's Annex A headline."
+      },
+      "headline-drenched": {
+        "displayName": "Headline, large",
+        "purpose": "Offer headline (and Contact at up to 3.75rem, 820)."
+      },
+      "lede-accent": {
+        "displayName": "Lede Accent",
+        "purpose": "Cobalt second voice under the Why headline; used once."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "h3 for path steps, plan names, demo slots, extras."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "Hero subhead and section intros, in Mist."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Paragraphs, capped at 68ch or 60ch in columns."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Nav links, form labels, tags, status line, footer."
+      },
+      "control": {
+        "displayName": "Control",
+        "purpose": "Buttons and link-actions; prices use 680 to 720 with tabular numerals."
+      }
+    },
+    "shadows": [
+      {
+        "name": "lift",
+        "value": "0 1px 2px oklch(5% 0.02 248 / 0.35), 0 10px 30px -8px oklch(5% 0.02 248 / 0.55)",
+        "purpose": "Only the hero message bubble and the contact form panel, resting on the signal field."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "The single easing for every transition and entrance."
+      },
+      {
+        "name": "arrive",
+        "value": "translateY(18px) + blur(6px) to none, 0.9s, 90ms stagger per index",
+        "purpose": "Section entrance, once, at 12% visible; only when the motion class is set."
+      },
+      {
+        "name": "bubble-land",
+        "value": "translateY(14px) scale(0.92) blur(8px) to none, 0.8s",
+        "purpose": "Hero bubble landing, 260ms after the field's first ping, 1.8s fallback."
+      },
+      {
+        "name": "ring-out",
+        "value": "scale(0.2) to 1, 1.6s, 0.12s staggers",
+        "purpose": "The bubble's three rings expanding as it lands."
+      },
+      {
+        "name": "dot-ping",
+        "value": "scale(1) to scale(3.2), 2.4s, 3 iterations",
+        "purpose": "Status dot ring; pings three times then stops."
+      },
+      {
+        "name": "state",
+        "value": "0.2s to 0.35s",
+        "purpose": "Hover, focus and color transitions."
+      },
+      {
+        "name": "field-fade",
+        "value": "opacity 0 to 1, 1.2s",
+        "purpose": "Signal canvas fading in over its CSS ground once live."
+      },
+      {
+        "name": "field-ping",
+        "value": "every 4.6s",
+        "purpose": "Automatic ripple from the section's origin element."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "narrow-hero",
+        "value": "480px"
+      },
+      {
+        "name": "offer-stack",
+        "value": "760px"
+      },
+      {
+        "name": "shader-narrow",
+        "value": "768px"
+      },
+      {
+        "name": "nav-collapse",
+        "value": "860px"
+      },
+      {
+        "name": "hero-stack",
+        "value": "900px"
+      }
+    ],
+    "signalField": {
+      "sections": [
+        "Hero",
+        "Why",
+        "Contact"
+      ],
+      "renderer": "raw WebGL fragment shader, no library",
+      "resolutionScale": {
+        "desktop": 0.6,
+        "narrowBelow768px": 0.5,
+        "maxDevicePixelRatio": 2
+      },
+      "fpsCap": {
+        "desktop": 50,
+        "phone": 30
+      },
+      "pauses": "off-screen (IntersectionObserver) and hidden tab",
+      "stillFrame": "reduced motion, data saver, or 4 or fewer cores with 4 GB or less memory",
+      "fallback": "CSS ground: a deep-blue radial wash and a faint signal-yellow wash over Night Ink when WebGL is missing or loading",
+      "colors": {
+        "ground": "#0b111b",
+        "field": "#3a72e8",
+        "ripple": "#ffd23f",
+        "note": "Hex constants in signal.ts, hand-matched to ink-0, field and signal; change together."
+      },
+      "bufferRule": "preserveDrawingBuffer: true; a frame is drawn on every resize and on re-entering the viewport; the canvas fades in only after its first frame. Prevents smeared stale-GPU-memory artifacts while scrolling."
+    },
+    "rasterProvenance": {
+      "source": "Pre-existing assets supplied by Jesús Salinas; none generated.",
+      "files": [
+        "jesus-bw.webp",
+        "jsalinas-favicon.png"
+      ],
+      "note": "The favicon carries an embedded origin note; the WebP carries none because sidecars would be published from public/. DESIGN.md is its provenance record. Earlier client screenshots are no longer referenced."
+    }
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Cobalt pill for the one action per region: Escríbeme, form submit.",
+      "html": "<a class=\"ds-btn ds-btn-primary\" href=\"#\">Escríbeme <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.55rem; min-height: 3.25rem; padding: 0 1.6rem; border-radius: 999px; border: 1.5px solid var(--rule-strong, oklch(100% 0 0 / 0.22)); background: transparent; color: var(--text, oklch(96% 0.012 85)); font-family: 'Archivo Variable', 'Archivo', system-ui, sans-serif; font-weight: 680; font-stretch: 108%; font-size: 1.0625rem; text-decoration: none; cursor: pointer; transition: background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn svg { width: 1.15em; height: 1.15em; transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn:hover svg { transform: translateX(3px); } .ds-btn:active { transform: scale(0.98); } .ds-btn:focus-visible { outline: 2px solid var(--accent, oklch(71% 0.15 252)); outline-offset: 3px; } .ds-btn-primary { background: var(--accent, oklch(71% 0.15 252)); border-color: var(--accent, oklch(71% 0.15 252)); color: var(--on-accent, oklch(17% 0.045 258)); } .ds-btn-primary:hover { background: var(--accent-hot, oklch(77% 0.125 248)); border-color: var(--accent-hot, oklch(77% 0.125 248)); }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Quiet outline pill for the secondary action: Ver precios, the mail link.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#\">Ver precios</a>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; justify-content: center; gap: 0.55rem; min-height: 3.25rem; padding: 0 1.6rem; border-radius: 999px; border: 1.5px solid var(--rule-strong, oklch(100% 0 0 / 0.22)); background: transparent; color: var(--text, oklch(96% 0.012 85)); font-family: 'Archivo Variable', 'Archivo', system-ui, sans-serif; font-weight: 680; font-stretch: 108%; font-size: 1.0625rem; text-decoration: none; transition: background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-ghost:hover { border-color: var(--text, oklch(96% 0.012 85)); background: oklch(100% 0 0 / 0.06); } .ds-btn-ghost:active { transform: scale(0.98); } .ds-btn-ghost:focus-visible { outline: 2px solid var(--accent, oklch(71% 0.15 252)); outline-offset: 3px; }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav-cta",
+      "description": "Solid-state bar: wordmark, Mist links with growing cobalt underline, language switch, outline cobalt CTA.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-nav-brand\" href=\"#\">jsalinas<span>.dev</span></a><nav class=\"ds-nav-links\"><a href=\"#\">Sobre mí</a><a href=\"#\">Oferta</a><a href=\"#\">Trabajos</a></nav><span class=\"ds-nav-lang\"><a href=\"#\" aria-current=\"true\">ES</a><a href=\"#\">EN</a></span><a class=\"ds-nav-cta\" href=\"#\">Contacto</a></header>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 2rem; height: 4.5rem; padding: 0 1.5rem; background: var(--ink-0, oklch(15.5% 0.028 248)); border-bottom: 1px solid var(--rule, oklch(100% 0 0 / 0.11)); color: var(--text, oklch(96% 0.012 85)); font-family: 'Archivo Variable', 'Archivo', system-ui, sans-serif; } .ds-nav-brand { margin-right: auto; font-weight: 800; font-stretch: 118%; font-size: 1.2rem; letter-spacing: -0.02em; color: inherit; text-decoration: none; } .ds-nav-brand span { color: var(--accent, oklch(71% 0.15 252)); } .ds-nav-links { display: flex; gap: 2rem; } .ds-nav-links a, .ds-nav-lang a { position: relative; color: var(--text-2, oklch(80% 0.022 240)); font-weight: 560; font-size: 0.975rem; text-decoration: none; transition: color 0.2s cubic-bezier(0.16, 1, 0.3, 1); } .ds-nav-links a::after { content: ''; position: absolute; left: 0; right: 0; bottom: -0.35rem; height: 2px; background: var(--accent, oklch(71% 0.15 252)); transform: scaleX(0); transform-origin: left; transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1); } .ds-nav-links a:hover, .ds-nav-lang a:hover { color: var(--text, oklch(96% 0.012 85)); } .ds-nav-links a:hover::after { transform: scaleX(1); } .ds-nav-lang { display: flex; gap: 0.75rem; font-stretch: 110%; } .ds-nav-lang a[aria-current='true'] { color: var(--text, oklch(96% 0.012 85)); text-decoration: underline; text-decoration-color: var(--accent, oklch(71% 0.15 252)); text-decoration-thickness: 2px; text-underline-offset: 0.22em; } .ds-nav-cta { display: inline-flex; align-items: center; min-height: 2.6rem; padding: 0 1.15rem; border-radius: 999px; border: 1.5px solid var(--accent, oklch(71% 0.15 252)); color: var(--accent, oklch(71% 0.15 252)); font-weight: 680; font-size: 0.975rem; text-decoration: none; transition: background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s cubic-bezier(0.16, 1, 0.3, 1); } .ds-nav-cta:hover { background: var(--accent, oklch(71% 0.15 252)); color: var(--on-accent, oklch(17% 0.045 258)); } .ds-nav a:focus-visible { outline: 2px solid var(--accent, oklch(71% 0.15 252)); outline-offset: 3px; border-radius: 4px; }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Night Ink well with a strong hairline; focus turns the stroke cobalt, invalid turns it Alarm.",
+      "html": "<label class=\"ds-field\"><span>Tu nombre</span><input type=\"text\" placeholder=\"Nombre y apellido\" /></label>",
+      "css": ".ds-field { display: grid; gap: 0.5rem; font-family: 'Archivo Variable', 'Archivo', system-ui, sans-serif; color: var(--text, oklch(96% 0.012 85)); } .ds-field span { font-weight: 620; font-size: 0.975rem; } .ds-field input { width: 100%; padding: 0.85rem 1rem; border-radius: 0.75rem; border: 1.5px solid var(--rule-strong, oklch(100% 0 0 / 0.22)); background: var(--ink-0, oklch(15.5% 0.028 248)); color: var(--text, oklch(96% 0.012 85)); font: inherit; font-size: 1.0625rem; transition: border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1); } .ds-field input::placeholder { color: var(--text-3, oklch(68% 0.026 240)); } .ds-field input:hover { border-color: oklch(100% 0 0 / 0.34); } .ds-field input:focus, .ds-field input:focus-visible { outline: none; border-color: var(--accent, oklch(71% 0.15 252)); background: var(--ink-1, oklch(19.5% 0.032 248)); } .ds-field input:user-invalid { border-color: oklch(70% 0.19 25); }"
+    },
+    {
+      "name": "Message Bubble",
+      "kind": "custom",
+      "refersTo": "message-bubble",
+      "description": "Signature: the labelled example incoming message, tail bottom-left, landing on signal-yellow ripple rings.",
+      "html": "<figure class=\"ds-bubble\"><span class=\"ds-bubble-rings\" aria-hidden=\"true\"><span></span><span></span><span></span></span><figcaption class=\"ds-bubble-meta\"><span class=\"ds-bubble-status\">Nuevo mensaje</span><span class=\"ds-bubble-tag\">Ejemplo</span></figcaption><p class=\"ds-bubble-text\">Hola, vi tu página. ¿Hacen remodelación de baños en Surrey?</p></figure>",
+      "css": ".ds-bubble { position: relative; isolation: isolate; width: min(100%, 23rem); margin: 3rem 3rem 3rem 5rem; padding: 1rem 1.15rem 1.15rem; border-radius: 1.35rem 1.35rem 1.35rem 0.35rem; background: var(--ink-1, oklch(19.5% 0.032 248)); border: 1px solid var(--rule, oklch(100% 0 0 / 0.11)); box-shadow: 0 1px 2px oklch(5% 0.02 248 / 0.35), 0 10px 30px -8px oklch(5% 0.02 248 / 0.55); color: var(--text, oklch(96% 0.012 85)); font-family: 'Archivo Variable', 'Archivo', system-ui, sans-serif; } .ds-bubble::before { content: ''; position: absolute; left: -0.5rem; bottom: -1px; width: 1rem; height: 1rem; background: var(--ink-1, oklch(19.5% 0.032 248)); border-left: 1px solid var(--rule, oklch(100% 0 0 / 0.11)); border-bottom: 1px solid var(--rule, oklch(100% 0 0 / 0.11)); clip-path: polygon(100% 0, 100% 100%, 0 100%); } .ds-bubble-rings { position: absolute; z-index: -1; left: 0; bottom: 0; width: 0; height: 0; } .ds-bubble-rings span { position: absolute; left: 0; top: 0; width: var(--d); aspect-ratio: 1; border: 1.5px solid oklch(88% 0.165 96 / var(--a)); border-radius: 50%; transform: translate(-50%, -50%); } .ds-bubble-rings span:nth-child(1) { --d: 9rem; --a: 0.7; } .ds-bubble-rings span:nth-child(2) { --d: 17rem; --a: 0.4; } .ds-bubble-rings span:nth-child(3) { --d: 27rem; --a: 0.2; } .ds-bubble-meta { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 0.5rem; } .ds-bubble-status { color: var(--accent, oklch(71% 0.15 252)); font-size: 0.85rem; font-weight: 680; font-stretch: 110%; } .ds-bubble-tag { padding: 0.1rem 0.55rem; border-radius: 999px; border: 1px solid var(--rule-strong, oklch(100% 0 0 / 0.22)); color: var(--text-3, oklch(68% 0.026 240)); font-size: 0.75rem; font-weight: 600; } .ds-bubble-text { margin: 0; font-size: 1.125rem; line-height: 1.45; font-weight: 480; }"
+    },
+    {
+      "name": "Status Line",
+      "kind": "custom",
+      "refersTo": "status-line",
+      "description": "Annex A availability line under the hero actions; signal-yellow dot pings three times then stops. Never an eyebrow.",
+      "html": "<p class=\"ds-status\"><span class=\"ds-status-dot\" aria-hidden=\"true\"></span>Disponible para nuevos proyectos</p>",
+      "css": ".ds-status { display: flex; align-items: center; gap: 0.65rem; margin: 0; color: var(--text-2, oklch(80% 0.022 240)); font-family: 'Archivo Variable', 'Archivo', system-ui, sans-serif; font-size: 0.95rem; font-weight: 560; } .ds-status-dot { position: relative; flex: none; width: 0.55rem; height: 0.55rem; border-radius: 50%; background: var(--signal, oklch(88% 0.165 96)); } .ds-status-dot::after { content: ''; position: absolute; inset: 0; border-radius: 50%; border: 1.5px solid var(--signal, oklch(88% 0.165 96)); opacity: 0; animation: ds-dot-ping 2.4s cubic-bezier(0.16, 1, 0.3, 1) 3; } @keyframes ds-dot-ping { from { transform: scale(1); opacity: 0.9; } to { transform: scale(3.2); opacity: 0; } }"
+    },
+    {
+      "name": "Offer Plan (drenched field)",
+      "kind": "card",
+      "refersTo": "offer-field",
+      "description": "Plan on the cobalt ground: ink rule, large name, tabular price, soft-ink description. No card chrome.",
+      "html": "<section class=\"ds-offer\"><article class=\"ds-plan\"><h3>Un idioma</h3><p class=\"ds-plan-price\">550 CAD en Canadá, 499 USD en Estados Unidos.</p><p class=\"ds-plan-desc\">Una sola página con lo que un cliente necesita para decidir. El dominio queda a tu nombre: <code>tu@tudominio.com</code></p></article></section>",
+      "css": ".ds-offer { padding: 2.5rem 1.5rem; background: var(--accent, oklch(71% 0.15 252)); color: var(--on-accent, oklch(17% 0.045 258)); font-family: 'Archivo Variable', 'Archivo', system-ui, sans-serif; } .ds-plan { padding-top: 2rem; border-top: 3px solid var(--on-accent, oklch(17% 0.045 258)); } .ds-plan h3 { margin: 0; font-size: clamp(2rem, 1.5rem + 1.8vw, 3.1rem); font-weight: 820; font-stretch: 118%; line-height: 1; letter-spacing: -0.022em; } .ds-plan-price { margin: 1rem 0 0; font-size: clamp(1.2rem, 1.05rem + 0.6vw, 1.55rem); font-weight: 720; font-stretch: 110%; line-height: 1.3; font-variant-numeric: tabular-nums; } .ds-plan-desc { max-width: 60ch; margin: 1.5rem 0 0; color: var(--on-accent-2, oklch(27% 0.07 258)); line-height: 1.6; } .ds-plan code { font-family: inherit; font-weight: 650; font-stretch: 112%; background: var(--on-accent, oklch(17% 0.045 258)); color: var(--accent-hot, oklch(77% 0.125 248)); padding: 0.05em 0.35em; border-radius: 0.35em; } .ds-offer a:focus-visible { outline: 2px solid var(--on-accent, oklch(17% 0.045 258)); outline-offset: 3px; }"
+    },
+    {
+      "name": "Why Path Step",
+      "kind": "custom",
+      "refersTo": "why-path",
+      "description": "Station on the found, messaged, owned line: ringed cobalt node, title, Mist copy.",
+      "html": "<ol class=\"ds-path\"><li><span class=\"ds-node\" aria-hidden=\"true\"></span><h3>Te encuentran</h3><p>Tu oficio y tu zona, claros para quien busca.</p></li><li><span class=\"ds-node\" aria-hidden=\"true\"></span><h3>Te escriben</h3><p>Un botón directo a tu WhatsApp.</p></li></ol>",
+      "css": ".ds-path { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; margin: 0; padding: 1.5rem; list-style: none; background: var(--ink-0, oklch(15.5% 0.028 248)); color: var(--text, oklch(96% 0.012 85)); font-family: 'Archivo Variable', 'Archivo', system-ui, sans-serif; } .ds-path::before { content: ''; position: absolute; left: 2.2rem; right: 1.5rem; top: 2.2rem; height: 1.5px; background: var(--rule-strong, oklch(100% 0 0 / 0.22)); } .ds-path li { position: relative; } .ds-node { position: relative; display: block; width: 1.4rem; height: 1.4rem; margin-bottom: 2rem; border-radius: 50%; border: 2px solid var(--accent, oklch(71% 0.15 252)); background: var(--ink-0, oklch(15.5% 0.028 248)); } .ds-node::after { content: ''; position: absolute; inset: 0.25rem; border-radius: 50%; background: var(--accent, oklch(71% 0.15 252)); } .ds-path h3 { margin: 0; font-size: clamp(1.45rem, 1.2rem + 0.9vw, 2rem); font-weight: 740; font-stretch: 118%; line-height: 1.05; letter-spacing: -0.022em; } .ds-path p { max-width: 34ch; margin: 1rem 0 0; color: var(--text-2, oklch(80% 0.022 240)); line-height: 1.6; }"
+    },
+    {
+      "name": "Demo Slot (empty)",
+      "kind": "card",
+      "refersTo": "demo-slot-empty",
+      "description": "Work slot waiting for a trade-template demo: phone-shaped frame holding the ripple mark, Fog coming-soon label.",
+      "html": "<div class=\"ds-slot\"><div class=\"ds-slot-shot\" aria-hidden=\"true\"><span class=\"ds-slot-ring\"></span><span class=\"ds-slot-ring ds-slot-ring--2\"></span></div><h3>Ejemplo 1</h3><span class=\"ds-slot-soon\">Próximamente</span></div>",
+      "css": ".ds-slot { width: 16rem; font-family: 'Archivo Variable', 'Archivo', system-ui, sans-serif; color: var(--text, oklch(96% 0.012 85)); } .ds-slot-shot { position: relative; overflow: hidden; aspect-ratio: 9 / 13; border-radius: 0.9rem; background: var(--ink-1, oklch(19.5% 0.032 248)); border: 1px solid var(--rule, oklch(100% 0 0 / 0.11)); } .ds-slot-ring { position: absolute; left: 50%; top: 50%; width: 38%; aspect-ratio: 1; border: 1.5px solid oklch(88% 0.165 96 / 0.5); border-radius: 50%; transform: translate(-50%, -50%); } .ds-slot-ring--2 { width: 72%; border-color: oklch(60% 0.15 256 / 0.4); } .ds-slot h3 { margin: 1.4rem 0 0; font-size: 1.45rem; font-weight: 740; font-stretch: 118%; line-height: 1; letter-spacing: -0.022em; } .ds-slot-soon { display: inline-flex; margin-top: 0.75rem; color: var(--text-3, oklch(68% 0.026 240)); font-weight: 680; font-size: 0.975rem; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Signal Portal",
+    "overview": "The site is one night scene with two working colors. A slow WebGL field of blue topographic waves sits under the hero, the \"why\" section and the contact section, and safety-yellow ripples pulse outward from a point the way a message arrives. Everything else is a blue-black ground, warm-white text and a single cobalt accent that either marks the one thing to act on or takes over a whole region outright: the offer is a drenched cobalt field set in dark ink.\n\nThe palette comes from the trades: tool blue and hi-vis yellow. That origin is what keeps a blue-on-dark site away from the AI-startup look, and flat fills are the guard that holds it there: no gradients on UI, no glass, no glow. Yellow is never a color the interface speaks in; it is only the signal, the moment something lands.\n\nType carries the voice. Archivo's width axis does the hierarchy work: headings are expanded and heavy, body text sits at normal width, controls sit in between. Density is low and the rhythm is long; sections breathe on large clamped padding and separate with hairline rules rather than cards. Depth comes from the field behind the content, and exactly two objects (the example message bubble and the contact form panel) lift off it. The world refuses the freelancer-portfolio default (photo, headline, three cards) and the dark AI-startup cliché (neon purple, glow, thin tracked type). It is built for a trades owner on a mid-range phone who came from a sales message, so the field's performance budget is part of the system, not an optimisation.",
+    "keyCharacteristics": [
+      "Blue-black night ground, one cobalt accent, one safety-yellow signal used only for ripples and rings.",
+      "A trades palette (tool blue, hi-vis yellow) held off the AI-startup look by flat fills.",
+      "Archivo variable: expanded heavy display, normal-width text; width is hierarchy.",
+      "Flat fills: no UI gradients, no glass, no glow halos.",
+      "Pill buttons, a message bubble with a tail, concentric ripple rings as the recurring mark.",
+      "A performance-budgeted WebGL signal field in three sections only.",
+      "Arrival motion: rise plus unblur on an exponential ease-out, staggered per section."
+    ],
+    "rules": [
+      {
+        "name": "The One Accent Rule",
+        "body": "Cobalt is the only color the interface speaks in. It either marks the single thing to read or act on, or it owns a whole region. It is never spread thin as a decorative tint across cards.",
+        "section": "colors"
+      },
+      {
+        "name": "The Drenched Field Rule",
+        "body": "When a section goes cobalt it goes all the way: cobalt ground, Cobalt Ink text, rules drawn in ink (3px under the headline, 1.5px between items), inline code inverted to ink chips with Cobalt Hot text, selection and focus outline switched to ink. No cards, no dark panels floating on the blue.",
+        "section": "colors"
+      },
+      {
+        "name": "The Signal Is Only Signal Rule",
+        "body": "Hi-vis yellow marks arrival: ripples, rings, the status dot. It is never text, never a button, never a ground, and never a second accent for emphasis.",
+        "section": "colors"
+      },
+      {
+        "name": "The Width Is Hierarchy Rule",
+        "body": "Headings expand (114% to 118%), controls widen slightly (108% to 112%), text stays at 100%. Do not create hierarchy with tracked-out uppercase or thin weights.",
+        "section": "typography"
+      },
+      {
+        "name": "The Split Headline Rule",
+        "body": "Hero, About and Contact headlines split into a Warm White prefix and a cobalt highlight in the same weight and size. One highlight per headline.",
+        "section": "typography"
+      },
+      {
+        "name": "The Headline Is the Heading Rule",
+        "body": "Each section's visible h2 is its approved Annex A headline. Section names (Sobre mí, Oferta, Por qué una página, Contacto) appear only in the nav. No kickers or eyebrows above any heading.",
+        "section": "typography"
+      },
+      {
+        "name": "The Phone First Screen Rule",
+        "body": "On a phone the first screen must show the headline, the price-bearing subhead and the \"Escríbeme\" button without scrolling; the bubble follows below the actions.",
+        "section": "layout"
+      },
+      {
+        "name": "The Two Lifts Rule",
+        "body": "Only objects that sit on the signal field and carry a message (the bubble, the form) are lifted. Everything else is flat and separated by hairlines.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Flat Fill Rule",
+        "body": "No gradients on UI, no glass or backdrop blur, no glow halos. The one exemption is the field's own CSS ground (a soft radial wash of deep blue and a faint signal-yellow wash over Night Ink), which stands in for the shader while it loads or when WebGL is missing.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Ripple Mark Rule",
+        "body": "Concentric circles in 1.5px strokes with decaying alpha are the system's recurring mark: three signal-yellow rings (0.7, 0.4, 0.2 alpha) centred on the bubble's tail; an inner signal ring and an outer field-blue ring behind the portrait and inside each empty demo slot; the status dot's ping; the ringed cobalt nodes of the Why path. New marks come from this vocabulary, not from icons or illustrations.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do keep cobalt to one job per view: the action, the highlight, or the whole ground (The One Accent Rule).",
+      "Do drench a region completely when it goes cobalt: ink text, ink rules, ink focus, no floating dark cards.",
+      "Do keep yellow for the signal only: ripples, rings, the status dot.",
+      "Do build hierarchy with Archivo's width axis and weight: 114% to 118% for headings, 100% for text.",
+      "Do make each section's h2 its Annex A headline and keep section names in the nav only.",
+      "Do keep the availability status line under the hero actions, plain text with the signal dot.",
+      "Do separate content with 1px or 1.5px hairlines instead of cards.",
+      "Do reuse the ripple ring vocabulary (1.5px strokes, decaying alpha) for any new mark.",
+      "Do keep the signal field inside its budget: reduced resolution, 30 fps on phones, paused off-screen, still frame on weak devices, data saver or reduced motion, CSS ground without WebGL, preserved buffer redrawn on resize and re-entry.",
+      "Do change the shader's hex constants together with the matching tokens.",
+      "Do keep content visible without JavaScript; arrival motion is an enhancement.",
+      "Do label the hero bubble as an example."
+    ],
+    "donts": [
+      "Don't add kickers or eyebrows above headings, including the availability line.",
+      "Don't use yellow for text, buttons, grounds or emphasis.",
+      "Don't use gradients on UI, glass, backdrop blur or glow halos; the field's CSS fallback ground is the only gradient.",
+      "Don't introduce purple, neon or a third hue; blue and hi-vis yellow are the whole palette.",
+      "Don't use WhatsApp green or the WhatsApp logo.",
+      "Don't lift anything other than the message bubble and the form panel.",
+      "Don't mix pill and panel radii on one object, or add sharp-cornered buttons.",
+      "Don't use thin weights or tracked-out uppercase labels for hierarchy.",
+      "Don't place the signal field outside Hero, Why and Contact, or run it without its performance rules.",
+      "Don't ship generated imagery, stock photos, invented testimonials or logos."
+    ]
+  }
+}

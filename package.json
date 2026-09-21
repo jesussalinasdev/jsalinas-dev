@@ -1,29 +1,19 @@
 {
   "name": "jsalinas-dev",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "npx wrangler@3 pages dev out --port 8788"
   },
   "dependencies": {
-    "jimp": "^1.6.0",
-    "next": "16.0.7",
-    "next-intl": "^4.5.8",
-    "react": "19.2.0",
-    "react-dom": "19.2.0"
+    "@fontsource-variable/archivo": "^5.3.0",
+    "astro": "^7.3.3"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.0.7",
     "sharp": "^0.34.5",
-    "tailwindcss": "^4",
     "typescript": "^5"
   }
 }
