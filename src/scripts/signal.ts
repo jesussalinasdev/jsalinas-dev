@@ -180,7 +180,11 @@ export function mountSignal(canvas: HTMLCanvasElement) {
     const ripData = new Float32Array(MAX_RIPPLES * 4);
     const pointer = { x: -2, y: -2, tx: -2, ty: -2 };
     const start = performance.now();
-    const pingAt = new Map<HTMLElement, number>();
+    // One clock for the whole page: at most one automatic ripple every RIPPLE_GAP
+    // seconds, whichever section or message asks for it.
+    const RIPPLE_GAP = 10;
+    let lastRipple = -Infinity;
+    const due = (gap = RIPPLE_GAP) => now - lastRipple >= gap;
     const visible = new Set<HTMLElement>();
     let now = still ? 9 : 0;
     let raf = 0;
@@ -266,12 +270,10 @@ export function mountSignal(canvas: HTMLCanvasElement) {
         now = (ts - start) / 1000;
         for (const s of visible) {
             const every = Number(s.dataset.fieldPing ?? 0);
-            if (!every) continue;
-            if (!pingAt.has(s)) pingAt.set(s, now + 0.5);
-            if (now >= pingAt.get(s)!) {
-                addRipple(...originOf(s), 1);
-                pingAt.set(s, now + every);
-            }
+            if (!every || !due(Math.max(RIPPLE_GAP, every))) continue;
+            addRipple(...originOf(s), 1);
+            lastRipple = now;
+            break;
         }
         draw();
     }
@@ -328,15 +330,13 @@ export function mountSignal(canvas: HTMLCanvasElement) {
 
     document.addEventListener('visibilitychange', () => (document.hidden ? stop() : run()));
 
-    // Any element can ask for a ripple from itself (e.g. a message arriving),
-    // at most one every REQUEST_GAP seconds so the field stays calm.
-    const REQUEST_GAP = 5;
-    let lastRequest = -Infinity;
+    // Any element can ask for a ripple from itself (e.g. a message arriving);
+    // it shares the page clock, so it never lands closer than RIPPLE_GAP.
     document.addEventListener('signal:request', (e) => {
-        if (still || now - lastRequest < REQUEST_GAP) return;
+        if (still || !due()) return;
         const el = (e as CustomEvent<{ el?: Element }>).detail?.el;
         if (!el) return;
-        lastRequest = now;
+        lastRipple = now;
         addRipple(...pointOf(el), 1.15);
     });
 
