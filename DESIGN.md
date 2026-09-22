@@ -259,7 +259,7 @@ Two families that never mix on one object. Controls and small marks are fully ro
 
 Strokes are 1px for hairlines on dark containers and 1.5px for anything interactive or drawn as a mark (buttons, inputs, rings, rules on the Offer field, the Why path). The Offer headline rule is the only 3px line.
 
-**The Ripple Mark Rule.** Concentric circles in 1.5px strokes with decaying alpha are the system's recurring mark: an inner signal ring and an outer field-blue ring behind the portrait and inside each empty demo slot; the status dot's ping; the ringed cobalt nodes of the Why path. New marks come from this vocabulary, not from icons or illustrations.
+**The Ripple Mark Rule.** Concentric circles in 1.5px strokes with decaying alpha are the system's recurring mark: a single signal ring around the portrait; an inner signal ring and an outer field-blue ring inside each empty demo slot; the status dot's ping; the ringed cobalt nodes of the Why path. New marks come from this vocabulary, not from icons or illustrations.
 
 ## Components
 
@@ -280,7 +280,7 @@ One pill family, 3.25rem tall, Control type, with an optional trailing 1.15em st
 ### Cards / Containers
 There are no card grids for content: sections are laid on the ground and divided by rules. The one exception is pricing, where each card is a separate thing to buy (see Offer Field).
 - **Form panel:** Raised Ink, 1px Hairline border, `panel` radius, Lift, clamped padding.
-- **Portrait:** a circle (square source, face anchored at 30% from the top) with a 1.5px Strong Hairline edge, full grayscale warming to 20% on hover, at the centre of two concentric Ripple Mark rings (signal yellow at 122%, field blue at 148%), so photo and rings read as one signal. Max 26rem, 16rem on phones with extra space so the outer ring clears the headline.
+- **Portrait:** a borderless circle (square source, face anchored at 30% from the top), full grayscale warming to 20% on hover, ringed by a single signal-yellow Ripple Mark ring at 112%. Max 30rem, 20rem on phones.
 
 ### Demo Slots (Work)
 Three slots for the sample pages built on the trades template. Each is a phone-shaped frame (9:13, 16:10 at 860px and below), `shot` radius, 1px Hairline border, a Title label and a link-action below.

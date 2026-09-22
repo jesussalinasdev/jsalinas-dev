@@ -21,7 +21,6 @@ const t = useTranslations(locale);
                 decoding="async"
             />
             <span class="about__ring" aria-hidden="true"></span>
-            <span class="about__ring about__ring--2" aria-hidden="true"></span>
         </div>
 
         <div class="about__copy">
@@ -52,7 +51,7 @@ const t = useTranslations(locale);
         position: relative;
         isolation: isolate;
         aspect-ratio: 1;
-        max-width: 26rem;
+        max-width: 30rem;
         width: 100%;
         justify-self: center;
     }
@@ -65,7 +64,6 @@ const t = useTranslations(locale);
         object-fit: cover;
         object-position: 50% 30%;
         border-radius: 50%;
-        border: 1.5px solid var(--rule-strong);
         filter: grayscale(1) contrast(1.05);
         transition: filter 0.8s var(--ease-out);
     }
@@ -74,22 +72,17 @@ const t = useTranslations(locale);
         filter: grayscale(0.2) contrast(1.02);
     }
 
-    /* Two signal rings echo the field behind the portrait */
+    /* One signal ring echoes the field around the portrait */
     .about__ring {
         position: absolute;
         z-index: 0;
         left: 50%;
         top: 50%;
-        width: 122%;
+        width: 112%;
         aspect-ratio: 1;
         border: 1.5px solid oklch(88% 0.165 96 / 0.45);
         border-radius: 50%;
         transform: translate(-50%, -50%);
-    }
-
-    .about__ring--2 {
-        width: 148%;
-        border-color: oklch(60% 0.15 256 / 0.35);
     }
 
     .about__title span {
@@ -115,8 +108,8 @@ const t = useTranslations(locale);
         }
 
         .about__photo {
-            max-width: 16rem;
-            margin-block: 2.5rem 1.5rem;
+            max-width: 20rem;
+            margin-block: 1.5rem 1rem;
             margin-inline: auto;
         }
     }
