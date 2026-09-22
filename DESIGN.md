@@ -280,7 +280,7 @@ One pill family, 3.25rem tall, Control type, with an optional trailing 1.15em st
 ### Cards / Containers
 There are no card grids for content: sections are laid on the ground and divided by rules. The one exception is pricing, where each card is a separate thing to buy (see Offer Field).
 - **Form panel:** Raised Ink, 1px Hairline border, `panel` radius, Lift, clamped padding.
-- **Portrait:** 4:5, `panel` radius, full grayscale with slight contrast, warming to 20% grayscale on hover, ringed by the Ripple Mark.
+- **Portrait:** a circle (square source, face anchored at 30% from the top) with a 1.5px Strong Hairline edge, full grayscale warming to 20% on hover, at the centre of two concentric Ripple Mark rings (signal yellow at 122%, field blue at 148%), so photo and rings read as one signal. Max 26rem, 16rem on phones with extra space so the outer ring clears the headline.
 
 ### Demo Slots (Work)
 Three slots for the sample pages built on the trades template. Each is a phone-shaped frame (9:13, 16:10 at 860px and below), `shot` radius, 1px Hairline border, a Title label and a link-action below.
